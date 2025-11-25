@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>shared_screen</class>
+ <widget class="QMainWindow" name="shared_screen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>屏幕共享会议</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background-color: #1c1c1e;
+}
+
+QWidget#centralwidget {
+    background-color: #1c1c1e;
+}
+
+/* 默认按钮样式 - 会被代码中的样式覆盖 */
+QPushButton {
+    background-color: #2c2c2e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 40px;
+}
+
+QPushButton:hover {
+    background-color: #20e212ff;
+}
+
+QPushButton:pressed {
+    background-color: #ef560fff;
+}
+
+QPushButton:checked {
+    background-color: #0a84ff;
+    color: #ffffff;
+}
+
+QLabel#statusLabel {
+    color: #8e8e93;
+    font-size: 13px;
+    padding-left: 10px;
+}
+
+QLabel#screenPreview {
+    background-color: #2c2c2e;
+    color: #8e8e93;
+    border: 2px dashed #48484a;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+QDockWidget {
+    background-color: #2c2c2e;
+    color: #ffffff;
+    titlebar-close-icon: url(close.png);
+    titlebar-normal-icon: url(float.png);
+}
+
+QDockWidget::title {
+    background-color: #2c2c2e;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+QTextBrowser {
+    background-color: #1c1c1e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+QLineEdit {
+    background-color: #2c2c2e;
+    color: #ffffff;
+    border: 1px solid #48484a;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #0a84ff;
+}
+
+QPushButton#btnSend {
+    background-color: #0a84ff;
+    min-width: 70px;
+}
+
+QPushButton#btnSend:hover {
+    background-color: #0077ed;
+}
+
+QPushButton#btnSend:pressed {
+    background-color: #006edb;
+}
+   </string>
+  </property>
+  
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>4</number>
+    </property>
+    <property name="bottomMargin">
+     <number>4</number>
+    </property>
+    
+    <item>
+     <widget class="QLabel" name="screenPreview">
+      <property name="text">
+       <string>屏幕预览区域
+点击"共享屏幕"开始</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>800</width>
+        <height>450</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    
+    <item>
+     <widget class="QWidget" name="controlsBar">
+      <property name="minimumHeight">
+       <number>5</number>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>5</number>
+       </property>
+       
+       <item>
+        <widget class="QLabel" name="statusLabel">
+         <property name="text">
+          <string>状态：未连接</string>
+         </property>
+        </widget>
+       </item>
+       
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>5</width>
+           <height>5</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       
+       <!-- <item>
+        <widget class="QPushButton" name="btnVoice">
+         <property name="text">
+          <string>🎤</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="toolTip">
+          <string>开启/关闭麦克风</string>
+         </property>
+        </widget>
+       </item> -->
+       
+       <!-- <item>
+        <widget class="QPushButton" name="btnShareScreen">
+         <property name="text">
+          <string>📺</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="toolTip">
+          <string>开始/停止共享屏幕</string>
+         </property>
+        </widget>
+       </item> -->
+       
+       <!-- <item>
+        <widget class="QPushButton" name="btnChat">
+         <property name="text">
+          <string>💬</string>
+         </property>
+         <property name="toolTip">
+          <string>显示/隐藏聊天面板</string>
+         </property>
+        </widget>
+       </item> -->
+       
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  
+  <widget class="QDockWidget" name="dockChat">
+   <property name="windowTitle">
+    <string>💬</string>
+   </property>
+   <property name="minimumWidth">
+    <number>300</number>
+   </property>
+   <property name="maximumWidth">
+    <number>400</number>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>10</number>
+     </property>
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <property name="bottomMargin">
+      <number>10</number>
+     </property>
+     
+     <item>
+      <widget class="QTextBrowser" name="chatView">
+       <property name="openExternalLinks">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       
+       <item>
+        <widget class="QLineEdit" name="chatInput">
+         <property name="placeholderText">
+          <string>输入消息...</string>
+         </property>
+        </widget>
+       </item>
+       
+       <item>
+        <widget class="QPushButton" name="btnSend">
+         <property name="text">
+          <string>发送</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "QtBuild",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${command:cmake.launchTargetPath}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceRoot}",
+            "environment": [
+                {
+                    "name": "PATH",
+                    "value": "d:/Qt/6.8.3/msvc2022_64/bin"
+                }
+            ],
+            "console": "integratedTerminal",
+            "visualizerFile": "c:\\Users\\Lenovo\\AppData\\Roaming\\Code\\User\\workspaceStorage\\086d23b003a4bd85cc3a43f7195b2862\\tonka3000.qtvsctools\\qt.natvis.xml"
+        }
+    ]
+}
