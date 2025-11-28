@@ -27,3 +27,9 @@ target_link_libraries(${PROJECT_NAME}
     PRIVATE
         Qt${QT_VERSION_MAJOR}::Widgets
 )
+
+# 添加自定义命令，在构建后运行 windeployqt
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_PREFIX_PATH}/bin/windeployqt.exe $<TARGET_FILE:${PROJECT_NAME}>
+    COMMENT "Running windeployqt to deploy Qt dependencies..."
+)
