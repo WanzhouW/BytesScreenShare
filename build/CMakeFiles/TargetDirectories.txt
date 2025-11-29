@@ -1,0 +1,3 @@
+D:/shared_screen/build/CMakeFiles/shared_screen.dir
+D:/shared_screen/build/CMakeFiles/ALL_BUILD.dir
+D:/shared_screen/build/CMakeFiles/ZERO_CHECK.dir

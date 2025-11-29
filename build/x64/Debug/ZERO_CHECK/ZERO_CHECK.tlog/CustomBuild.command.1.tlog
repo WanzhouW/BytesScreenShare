@@ -1,0 +1,10 @@
+^D:\SHARED_SCREEN\BUILD\CMAKEFILES\6C9456CFA453C601DCA15DD3E6B9C62B\GENERATE.STAMP.RULE
+setlocal
+D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/shared_screen -BD:/shared_screen/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/shared_screen/build/shared_screen.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

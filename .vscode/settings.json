@@ -1,0 +1,6 @@
+{
+    "qtConfigure.qtKitDir": "d:/Qt/6.8.3/msvc2022_64",
+    "files.associations": {
+        "qmediadevices": "cpp"
+    }
+}
