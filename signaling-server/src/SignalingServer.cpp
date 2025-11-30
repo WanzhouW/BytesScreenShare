@@ -218,6 +218,7 @@ void SignalingServer::handleIce(const QJsonArray& sessionList, const QJsonObject
         memset(buffer, 0, DEFAULT_BUFFER_SIZE);
         snprintf(buffer, DEFAULT_BUFFER_SIZE, "%s is not online", targetId.toStdString().c_str());
         handleError(QString(buffer), srcId, worker);
+        return;
     }
 
     QJsonObject forwardJson;
