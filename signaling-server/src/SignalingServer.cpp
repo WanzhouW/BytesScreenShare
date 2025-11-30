@@ -154,10 +154,7 @@ void SignalingServer::handleOffer(const QJsonArray& sessionList, const QJsonObje
     forwardJson.insert("from", srcId);
     forwardJson.insert("to", targetId);
     if (!isOnline(sessionList, targetId)) {
-        char buffer[DEFAULT_BUFFER_SIZE];
-        memset(buffer, 0, DEFAULT_BUFFER_SIZE);
-        snprintf(buffer, DEFAULT_BUFFER_SIZE, "%s is not online", targetId.toStdString().c_str());
-        handleError(QString(buffer), srcId, worker);
+        handleError(QString("%1 is not online").arg(targetId), srcId, worker);
     }
 
     if (jsonObj.contains("data")) {
