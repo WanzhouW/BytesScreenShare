@@ -77,7 +77,7 @@ bool WorkerPool::start(size_t threadCount, Worker::SignalingProcessor processor)
 
         worker->moveToThread(thread);
 
-        // registe signal with slot function
+        // register signal with slot function
         connect(thread, &QThread::started, worker, &Worker::startLoop);
         connect(worker, &Worker::sigSendResponse,
             this, &WorkerPool::onSendResponse);

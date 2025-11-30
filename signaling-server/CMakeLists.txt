@@ -2,8 +2,14 @@ cmake_minimum_required(VERSION 3.19)
 project(signaling-server LANGUAGES CXX)
 
 # 设置 Qt 安装路径
-# 如果使用VS Code 或其他IDE 自动构建的时候需要修改此路径
-set(CMAKE_PREFIX_PATH "f:/Qt/6.8.3/msvc2022_64") 
+# 推荐通过环境变量 QT_PATH 或 CMake 变量 CMAKE_PREFIX_PATH 指定 Qt 安装路径
+if(NOT DEFINED CMAKE_PREFIX_PATH)
+    if(DEFINED ENV{QT_PATH})
+        set(CMAKE_PREFIX_PATH "$ENV{QT_PATH}")
+    else()
+        message(WARNING "Qt 安装路径未设置。请通过设置环境变量 QT_PATH 或在 CMake 配置时指定 -DCMAKE_PREFIX_PATH=your_qt_path。")
+    endif()
+endif()
 
 # 启用自动化功能和 C++ 标准
 set(CMAKE_INCLUDE_CURRENT_DIR ON)

@@ -83,7 +83,7 @@ void SignalingServer::dispatchMessage(const SignalingTask& task, Worker* worker)
 
     QJsonObject rootJson = doc.object();
     
-    // B. ��ȡ��Ϣ����
+    // B. Get message type
     if (!rootJson.contains("type") || !rootJson["type"].isString()) {
         handleError("Invalid type", task._clientId, worker);
         return;
@@ -129,7 +129,7 @@ void SignalingServer::handleRegister(const QJsonArray& sessionList, const QJsonO
 
         for (const QJsonValue& val : sessionList) {
             QString targetId = val.toString();
-            // �����Լ� (��Ȼ sessionList ͨ���������Լ����������Ա��)
+            // 跳过自己 (虽然 sessionList 通常不包含自己，但防御性编程)
             if (targetId == srcId) continue;
 
             jsonNotify["to"] = targetId;
@@ -154,10 +154,7 @@ void SignalingServer::handleOffer(const QJsonArray& sessionList, const QJsonObje
     forwardJson.insert("from", srcId);
     forwardJson.insert("to", targetId);
     if (!isOnline(sessionList, targetId)) {
-        char buffer[DEFAULT_BUFFER_SIZE];
-        memset(buffer, 0, DEFAULT_BUFFER_SIZE);
-        snprintf(buffer, DEFAULT_BUFFER_SIZE, "%s is not online", targetId.toStdString().c_str());
-        handleError(QString(buffer), srcId, worker);
+        handleError(QString("%1 is not online").arg(targetId), srcId, worker);
     }
 
     if (jsonObj.contains("data")) {
@@ -207,7 +204,7 @@ void SignalingServer::handleAnswer(const QJsonArray& sessionList, const QJsonObj
     qDebug() << "Forwarded ANSWER from" << srcId << "to" << targetId;
 }
 
-// ���� ICE Candidate ת��
+// 处理 ICE Candidate 转发
 void SignalingServer::handleIce(const QJsonArray& sessionList, const QJsonObject& jsonObj, 
     const QString& srcId, Worker* worker)
 {
@@ -221,6 +218,7 @@ void SignalingServer::handleIce(const QJsonArray& sessionList, const QJsonObject
         memset(buffer, 0, DEFAULT_BUFFER_SIZE);
         snprintf(buffer, DEFAULT_BUFFER_SIZE, "%s is not online", targetId.toStdString().c_str());
         handleError(QString(buffer), srcId, worker);
+        return;
     }
 
     QJsonObject forwardJson;
