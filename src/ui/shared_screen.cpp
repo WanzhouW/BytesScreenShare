@@ -17,34 +17,47 @@
 #include <QKeyEvent>
 #include <QDebug>
 
+#include "signaling/TcpSignalingClient.hpp"
+#include "rtc/PeerConnectionManager.hpp"
+
+
 shared_screen::shared_screen(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::shared_screen)
 {
     ui->setupUi(this);
 
-    // 调试：检查 UI 指针是否存在
-    // qDebug() << "UI pointers:" << "btnVoice=" << (ui->btnVoice != nullptr)
-    //          << "btnShareScreen=" << (ui->btnShareScreen != nullptr)
-    //          << "btnChat=" << (ui->btnChat != nullptr)
-    //          << "btnSend=" << (ui->btnSend != nullptr);
+    // ================== P2P 初始化 ==================
+    qDebug() << "=== P2P Start ===";
+    m_isCaller = true;  // 这台机器作为 Caller；另一台你可以改成 false
+    m_signaling = new TcpSignalingClient(this);
+    // 假设信令服务器在本机 127.0.0.1:12345
+    m_signaling->connectToServer("127.0.0.1", 12345);
+    qDebug() << "connectToServer done....";
+    m_pcm = new PeerConnectionManager(m_signaling, m_isCaller, this);
+    qDebug() << "new PeerConnectionManager done....";
+    m_pcm->start();
+    qDebug() << "m_pcm->start() done....";
+
+    // ... P2P connect 信号槽 ...
+    connect(m_pcm, &PeerConnectionManager::connected, this, [this]() {
+        ui->statusLabel->setText(u8"状态：P2P 已连接");
+    });
+    connect(m_pcm, &PeerConnectionManager::disconnected, this, [this]() {
+        ui->statusLabel->setText(u8"状态：P2P 已断开");
+    });
+    connect(m_pcm, &PeerConnectionManager::errorOccurred, this, [this](const QString& err) {
+        ui->statusLabel->setText(u8"错误：" + err);
+    });
+    connect(m_pcm, &PeerConnectionManager::messageReceived, this, [this](const QString& msg) {
+        // 收到对方消息，显示为“远端”
+        appendRemoteMessage(u8"对方", msg);
+    });
+
 
     // ====== 初始界面 ======
     ui->dockChat->hide(); // 初始隐藏聊天面板
-    // ui->btnVoice->setChecked(false);       // 麦克风关闭
-    // ui->btnShareScreen->setChecked(false); // 未共享
     ui->statusLabel->setText("状态：未连接");
-
-    // ====== 连接已有按钮信号槽 ======
-    // if (ui->btnVoice)
-    //     connect(ui->btnVoice, &QPushButton::clicked, this, &shared_screen::on_btnVoice_clicked);
-    // if (ui->btnShareScreen)
-    //     connect(ui->btnShareScreen, &QPushButton::clicked, this, &shared_screen::on_btnShareScreen_clicked);
-    if (btnChat)
-        connect(btnChat, &QPushButton::clicked, this, &shared_screen::on_btnChat_clicked);
-    if (ui->btnSend)
-        connect(ui->btnSend, &QPushButton::clicked, this, &shared_screen::on_btnSend_clicked);
-    connect(ui->chatInput, &QLineEdit::returnPressed, this, &shared_screen::on_btnSend_clicked);
 
     // ====== 底部控制栏：动态扩展按钮（仿腾讯会议） ======
     // 依次添加：摄像头、参会者、录制、举手、设备、离开、网络质量
@@ -62,12 +75,8 @@ shared_screen::shared_screen(QWidget *parent)
     // 开关型按钮
     btnVoice->setCheckable(true);
     btnVoice->setChecked(isCameraOn);
-
     btnShareScreen->setCheckable(true);
-    btnShareScreen->setChecked(isCameraOn);
-
     btnVideo->setCheckable(true);
-    btnVideo->setChecked(isCameraOn);
     btnRecord->setCheckable(true);
 
     // 外观微调
@@ -188,7 +197,13 @@ void shared_screen::on_btnSend_clicked()
     ui->chatView->append(html);
     ui->chatInput->clear();
     ui->chatInput->setFocus();
+
+    // ===== 新增：通过 P2P 发送到对方 =====
+    if (m_pcm) {
+        m_pcm->sendMessage(text);
+    }
 }
+
 
 // =============== 新增功能 ===============
 void shared_screen::on_btnVideo_clicked()
