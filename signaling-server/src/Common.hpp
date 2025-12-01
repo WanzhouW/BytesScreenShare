@@ -6,6 +6,12 @@
 #include <QDateTime>  
 #include <unordered_map>  
 
+#define CRITICAL() qCritical() << "[CRITICAL]" << "[" << __FILE__ << ":" << __LINE__ <<"] "
+#define DEBUG() qDebug() << "[DEBUG]" << "[" << __FILE__ << ":" << __LINE__ <<"] "
+#define FATAL() qFatal() << "[FATAL]" << "[" << __FILE__ << ":" << __LINE__ <<"] "
+#define INFO() qInfo() << "[INFO]" << "[" << __FILE__ << ":" << __LINE__ <<"] "
+#define WARNING() qWarning() << "[WARNING]" << "[" << __FILE__ << ":" << __LINE__ <<"] "
+
 /**  
 * @struct SignalingTask  
 * @brief Represents a signaling task containing client information, payload, and timestamp.  
