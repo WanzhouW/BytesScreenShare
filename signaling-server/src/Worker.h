@@ -1,10 +1,6 @@
 #ifndef __WORKER_H__  
 #define __WORKER_H__  
 
-#include <QObject>  
-#include <QAtomicInt>
-#include <QThread>
-#include <memory>
 #include "Common.hpp"  
 #include "BlockingQueue.hpp"  
 

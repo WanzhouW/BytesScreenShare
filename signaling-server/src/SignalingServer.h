@@ -1,22 +1,6 @@
 #pragma once  
 
-#include <QThread>  
-#include <QString>  
-#include <QWebSocketServer>  
-#include <QWebSocket>  
-#include <QHostAddress>  
-#include <QUuid>  
-#include <QHash>  
-#include <QJsonDocument>  
-#include <QJsonObject>  
-#include <QJsonArray>  
-#include <QtGlobal>  
-
-#include <functional>  
-#include <cassert>  
-#include <string>  
-#include <cstdio>  
-
+#include "Common.hpp"
 #include "Worker.h"  
 
 const int DEFAULT_BUFFER_SIZE = 64;  

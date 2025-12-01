@@ -1,10 +1,29 @@
 #ifndef __COMMON_HPP__  
 #define __COMMON_HPP__  
 
+#include <QString>   
+#include <QDateTime>
+#include <QThread>  
 #include <QString>  
-#include <QByteArray>  
-#include <QDateTime>  
-#include <unordered_map>  
+#include <QWebSocketServer>  
+#include <QWebSocket>  
+#include <QHostAddress>  
+#include <QUuid>  
+#include <QHash>  
+#include <QJsonDocument>  
+#include <QJsonObject>  
+#include <QJsonArray>  
+#include <QtGlobal>
+#include <QObject>  
+#include <QAtomicInt>
+#include <QThread>
+
+#include <memory>
+#include <functional>  
+#include <string>  
+#include <unordered_map> 
+
+#include <cassert> 
 
 #define CRITICAL() qCritical() << "[CRITICAL]" << "[" << __FILE__ << ":" << __LINE__ <<"] "
 #define DEBUG() qDebug() << "[DEBUG]" << "[" << __FILE__ << ":" << __LINE__ <<"] "
