@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16) # CMake install : https://cmake.org/downloa
 project(shared_screen LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_PREFIX_PATH "d:/Qt/6.8.3/msvc2022_64") # Qt Kit Dir
+set(CMAKE_PREFIX_PATH "f:/Qt/6.8.3/msvc2022_64") # Qt Kit Dir
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -18,6 +18,12 @@ aux_source_directory(./src srcs)
 # Specify MSVC UTF-8 encoding   
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+
+# 为VS QT Tool 添加 /Zc:__cplusplus, /permissive-, 和 /std:c++17 编译选项
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/Zc:__cplusplus>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/permissive->")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/std:c++17>")
 
 add_executable(${PROJECT_NAME}
     WIN32 # If you need a terminal for debug, please comment this statement

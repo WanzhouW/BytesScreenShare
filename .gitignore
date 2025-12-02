@@ -32,3 +32,6 @@ Makefile
 
 # VSCode settings (not recommended to commit)
 .vscode/
+
+# Batch files
+*.bat
