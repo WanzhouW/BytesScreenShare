@@ -1,0 +1,10 @@
+^E:\VSC\BYTESSCREENSHARE\THIRD_PARTY\LIBDATACHANNEL\EXAMPLES\MEDIA-SFU\CMAKELISTS.TXT
+setlocal
+"D:\visial studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SE:/vsc/BytesScreenShare -BE:/vsc/BytesScreenShare/build --check-stamp-file E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/media-sfu/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

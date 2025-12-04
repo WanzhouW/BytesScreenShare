@@ -1,0 +1,387 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "third_party/libdatachannel/deps/libsrtp/RelWithDebInfo/kernel_driver.exe"
+		},
+		{
+			"path" : "third_party/libdatachannel/deps/libsrtp/RelWithDebInfo/kernel_driver.pdb"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"add_compile_options",
+			"target_compile_options",
+			"target_set_warnings",
+			"add_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"third_party/libdatachannel/deps/libsrtp/CMakeLists.txt",
+			"CMakeLists.txt",
+			"third_party/libdatachannel/deps/libsrtp/cmake/Warnings.cmake",
+			"third_party/libdatachannel/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 375,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 384,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 288,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 297,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 19,
+				"parent" : 5
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 376,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 72,
+				"parent" : 7
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 125,
+				"parent" : 0
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 65,
+				"parent" : 10
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 63,
+				"parent" : 10
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 66,
+				"parent" : 10
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 383,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /O2 /Ob1 /DNDEBUG -MD"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/utf-8"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/W4"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/permissive-"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/w44062"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/WX"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 9,
+					"define" : "HAVE_CONFIG_H"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "NOMINMAX"
+				},
+				{
+					"backtrace" : 12,
+					"define" : "WIN32_LEAN_AND_MEAN"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/deps/libsrtp"
+				},
+				{
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/deps/libsrtp/kernel_driver_autogen/include_RelWithDebInfo"
+				},
+				{
+					"backtrace" : 14,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/test"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/crypto/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "H:/OpenSSL-Win64/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /Zi /O2 /Ob1 /DNDEBUG -MD"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/utf-8"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/W4"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/permissive-"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/w44062"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "/WX"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 9,
+					"define" : "HAVE_CONFIG_H"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "NOMINMAX"
+				},
+				{
+					"backtrace" : 12,
+					"define" : "WIN32_LEAN_AND_MEAN"
+				},
+				{
+					"backtrace" : 13,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/deps/libsrtp"
+				},
+				{
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/deps/libsrtp/kernel_driver_autogen/include_RelWithDebInfo"
+				},
+				{
+					"backtrace" : 14,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/test"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/crypto/include"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "H:/OpenSSL-Win64/include"
+				}
+			],
+			"language" : "C",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "99"
+			},
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "srtp2::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "kernel_driver::@cc580ff65ea016719823",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /O2 /Ob1 /DNDEBUG -MD",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "/machine:x64 /debug /INCREMENTAL /subsystem:console",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "RelWithDebInfo\\srtp2.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "H:\\OpenSSL-Win64\\lib\\VC\\libcrypto64MD.lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "ws2_32.lib",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "kernel_driver",
+	"nameOnDisk" : "kernel_driver.exe",
+	"paths" : 
+	{
+		"build" : "third_party/libdatachannel/deps/libsrtp",
+		"source" : "third_party/libdatachannel/deps/libsrtp"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/third_party/libdatachannel/deps/libsrtp/kernel_driver_autogen/mocs_compilation_RelWithDebInfo.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/test/kernel_driver.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/test/getopt_s.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

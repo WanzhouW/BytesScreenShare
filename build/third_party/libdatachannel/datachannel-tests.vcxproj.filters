@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\third_party\libdatachannel\datachannel-tests_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\connectivity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\negotiated.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\reliability.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\turn_connectivity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\track.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\capi_connectivity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\capi_track.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\websocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\websocketserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\capi_websocketserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\benchmark.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\third_party\libdatachannel\datachannel-tests_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\third_party\libdatachannel\datachannel-tests_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\third_party\libdatachannel\datachannel-tests_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\test\test.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0B3E677E-C09C-3104-BBB1-27B2BA1E4E27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B5B2E0E3-3C47-3C00-927D-0C95FF0D1E2A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

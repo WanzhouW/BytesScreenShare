@@ -1,0 +1,657 @@
+{
+	"archive" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "/machine:x64",
+				"role" : "flags"
+			}
+		]
+	},
+	"artifacts" : 
+	[
+		{
+			"path" : "third_party/libdatachannel/deps/libsrtp/Debug/srtp2.lib"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"install",
+			"add_compile_options",
+			"target_compile_options",
+			"target_set_warnings",
+			"add_definitions",
+			"target_compile_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"third_party/libdatachannel/deps/libsrtp/CMakeLists.txt",
+			"CMakeLists.txt",
+			"third_party/libdatachannel/deps/libsrtp/cmake/Warnings.cmake",
+			"third_party/libdatachannel/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 249,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 301,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 19,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 261,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 2,
+				"line" : 72,
+				"parent" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 125,
+				"parent" : 0
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 65,
+				"parent" : 8
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 63,
+				"parent" : 8
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 298,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 281,
+				"parent" : 0
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 287,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /GR /EHsc /Zi /Ob0 /Od /RTC1 -MDd"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "/utf-8"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/W4"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/permissive-"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/w44062"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/WX"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 7,
+					"define" : "HAVE_CONFIG_H"
+				},
+				{
+					"backtrace" : 9,
+					"define" : "NOMINMAX"
+				},
+				{
+					"backtrace" : 10,
+					"define" : "WIN32_LEAN_AND_MEAN"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/deps/libsrtp"
+				},
+				{
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/deps/libsrtp/srtp2_autogen/include_Debug"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/crypto/include"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/include"
+				},
+				{
+					"backtrace" : 13,
+					"isSystem" : true,
+					"path" : "H:/OpenSSL-Win64/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "/DWIN32 /D_WINDOWS /Zi /Ob0 /Od /RTC1 -MDd"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "/utf-8"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/W4"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/permissive-"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/w44062"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "/WX"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 7,
+					"define" : "HAVE_CONFIG_H"
+				},
+				{
+					"backtrace" : 9,
+					"define" : "NOMINMAX"
+				},
+				{
+					"backtrace" : 10,
+					"define" : "WIN32_LEAN_AND_MEAN"
+				},
+				{
+					"backtrace" : 11,
+					"define" : "_CRT_SECURE_NO_WARNINGS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"path" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/deps/libsrtp"
+				},
+				{
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp"
+				},
+				{
+					"backtrace" : 0,
+					"path" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/deps/libsrtp/srtp2_autogen/include_Debug"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/crypto/include"
+				},
+				{
+					"backtrace" : 12,
+					"path" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/libsrtp/include"
+				},
+				{
+					"backtrace" : 13,
+					"isSystem" : true,
+					"path" : "H:/OpenSSL-Win64/include"
+				}
+			],
+			"language" : "C",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "99"
+			},
+			"sourceIndexes" : 
+			[
+				1,
+				2,
+				3,
+				5,
+				6,
+				7,
+				8,
+				9,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "srtp2::@cc580ff65ea016719823",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "C:/Program Files/shared_screen"
+		}
+	},
+	"name" : "srtp2",
+	"nameOnDisk" : "srtp2.lib",
+	"paths" : 
+	{
+		"build" : "third_party/libdatachannel/deps/libsrtp",
+		"source" : "third_party/libdatachannel/deps/libsrtp"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "src",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		},
+		{
+			"name" : "src\\Ciphers",
+			"sourceIndexes" : 
+			[
+				2,
+				3,
+				4,
+				5,
+				6,
+				7
+			]
+		},
+		{
+			"name" : "src\\Hashes",
+			"sourceIndexes" : 
+			[
+				8,
+				9,
+				10,
+				11,
+				12
+			]
+		},
+		{
+			"name" : "src\\Kernel",
+			"sourceIndexes" : 
+			[
+				13,
+				14,
+				15,
+				16
+			]
+		},
+		{
+			"name" : "src\\Math",
+			"sourceIndexes" : 
+			[
+				17
+			]
+		},
+		{
+			"name" : "src\\Replay",
+			"sourceIndexes" : 
+			[
+				18,
+				19
+			]
+		},
+		{
+			"name" : "include",
+			"sourceIndexes" : 
+			[
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/third_party/libdatachannel/deps/libsrtp/srtp2_autogen/mocs_compilation_Debug.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/srtp/srtp.c",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/cipher/cipher.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/cipher/cipher_test_cases.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/cipher/cipher_test_cases.h",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/cipher/null_cipher.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/cipher/aes_icm_ossl.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/cipher/aes_gcm_ossl.c",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/hash/auth.c",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/hash/auth_test_cases.c",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/hash/auth_test_cases.h",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/hash/null_auth.c",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/hash/hmac_ossl.c",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/kernel/alloc.c",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/kernel/crypto_kernel.c",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/kernel/err.c",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/kernel/key.c",
+			"sourceGroupIndex" : 4
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/math/datatypes.c",
+			"sourceGroupIndex" : 5
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/replay/rdb.c",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/replay/rdbx.c",
+			"sourceGroupIndex" : 6
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/aes.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/aes_icm.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/alloc.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/auth.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/cipher.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/cipher_types.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/crypto_kernel.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/crypto_types.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/datatypes.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/err.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/hmac.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/integers.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/key.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/null_auth.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/null_cipher.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/rdb.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/rdbx.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/crypto/include/sha1.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/include/srtp.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third_party/libdatachannel/deps/libsrtp/include/srtp_priv.h",
+			"sourceGroupIndex" : 7
+		},
+		{
+			"backtrace" : 1,
+			"path" : "build/third_party/libdatachannel/deps/libsrtp/config.h",
+			"sourceGroupIndex" : 7
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

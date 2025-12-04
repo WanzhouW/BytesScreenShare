@@ -1,6 +1,6 @@
-^D:\SHARED_SCREEN\CMAKELISTS.TXT
+^E:\VSC\BYTESSCREENSHARE\CMAKELISTS.TXT
 setlocal
-D:\Qt\Tools\CMake_64\bin\cmake.exe -SD:/shared_screen -BD:/shared_screen/build --check-stamp-file D:/shared_screen/build/CMakeFiles/generate.stamp
+"D:\visial studio\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SE:/vsc/BytesScreenShare -BE:/vsc/BytesScreenShare/build --check-stamp-file E:/vsc/BytesScreenShare/build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

@@ -1,0 +1,60 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"third_party/libdatachannel/deps/libsrtp/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "roc_driver::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "srtp_driver::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "replay_driver::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "test_srtp::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "srtp2::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "datatypes_driver::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "cipher_driver::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "kernel_driver::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "rdbx_driver::@cc580ff65ea016719823"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@cc580ff65ea016719823",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "third_party/libdatachannel/deps/libsrtp",
+		"source" : "third_party/libdatachannel/deps/libsrtp"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

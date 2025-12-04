@@ -1,0 +1,2840 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						8,
+						31
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel-Debug-c28dfb3f8ab9676592ee.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel",
+					"targetIndexes" : 
+					[
+						3,
+						10,
+						11,
+						21,
+						22
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/plog",
+					"jsonFile" : "directory-third_party.libdatachannel.deps.plog-Debug-08e9716f18c8cdc26b01.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "third_party/libdatachannel/deps/plog",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/usrsctp",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.usrsctp-Debug-0940280cd44c5372b502.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/libdatachannel/deps/usrsctp",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/usrsctp/usrsctplib",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.usrsctp.usrsctplib-Debug-b0d600ed5097c026cd88.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "third_party/libdatachannel/deps/usrsctp/usrsctplib",
+					"targetIndexes" : 
+					[
+						36
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/libsrtp",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.libsrtp-Debug-50c47ff77f3299200b91.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "third_party/libdatachannel/deps/libsrtp",
+					"targetIndexes" : 
+					[
+						6,
+						9,
+						23,
+						27,
+						28,
+						29,
+						30,
+						32,
+						33,
+						35
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/libjuice",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.libjuice-Debug-4eec754b858d19506c2e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "third_party/libdatachannel/deps/libjuice",
+					"targetIndexes" : 
+					[
+						2,
+						24,
+						25,
+						26
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/json",
+					"jsonFile" : "directory-third_party.libdatachannel.deps.json-Debug-6f75d6e31f90b29312ed.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 6,
+					"source" : "third_party/libdatachannel/deps/json",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/client",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.client-Debug-199ef05858c200c58560.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/client",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/client-benchmark",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.client-benchmark-Debug-125fcba7c326ebdc5c2b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/client-benchmark",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-receiver",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-receiver-Debug-1c7fa5554a51d1dafe95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-receiver",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-sender",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-sender-Debug-6da171ce1bdd5ff03c83.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-sender",
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-sfu",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-sfu-Debug-125590aa7d5d7f6afa47.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-sfu",
+					"targetIndexes" : 
+					[
+						20
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/streamer",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.streamer-Debug-aaed9cc123197482cb7b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/streamer",
+					"targetIndexes" : 
+					[
+						34
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/copy-paste",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.copy-paste-Debug-4a12ee3db3a48c4c5c0f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/copy-paste",
+					"targetIndexes" : 
+					[
+						14,
+						17
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/copy-paste-capi",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.copy-paste-capi-Debug-d6a7d1fd78d2521bc5c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 7,
+					"source" : "third_party/libdatachannel/examples/copy-paste-capi",
+					"targetIndexes" : 
+					[
+						7,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "shared_screen",
+					"targetIndexes" : 
+					[
+						1,
+						8,
+						31
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"name" : "libdatachannel",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						10,
+						11,
+						12,
+						13,
+						14,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						34
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "plog",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "usrsctplib",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5,
+						36
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "libsrtp2",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						6,
+						9,
+						23,
+						27,
+						28,
+						29,
+						30,
+						32,
+						33,
+						35
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "libjuice",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						24,
+						25,
+						26
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						15
+					],
+					"name" : "offerer",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						7,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@6c8bd6fc37349c1fbd74",
+					"jsonFile" : "target-ALL_BUILD-Debug-2ac681fa2964e7f7dd82.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-1825f5843ddfe1f89534.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ALL_BUILD::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-ALL_BUILD-Debug-18f04a8bc4d40e52e5d9.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-ALL_BUILD-Debug-fb4820fc64def17d956c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "ALL_BUILD::@ff5f1d5695890e42c107",
+					"jsonFile" : "target-ALL_BUILD-Debug-0cfe657be544d902a765.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@cd70e7bfc28e2e5eb92f",
+					"jsonFile" : "target-ALL_BUILD-Debug-1a11cf0c2c52f963968d.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@cc580ff65ea016719823",
+					"jsonFile" : "target-ALL_BUILD-Debug-b058a4692e5623724721.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "ALL_BUILD::@293e3c349eccec424056",
+					"jsonFile" : "target-ALL_BUILD-Debug-efe36215865900aaee8a.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-14d04942456fd4b0b01c.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "cipher_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-cipher_driver-Debug-88cf95ac310770ee6e0a.json",
+					"name" : "cipher_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-Debug-e5404799c8cf9a4d58a1.json",
+					"name" : "datachannel",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-benchmark::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-benchmark-Debug-3d89e86589e49c265521.json",
+					"name" : "datachannel-benchmark",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "datachannel-client::@1cda1b5563ea96095d36",
+					"jsonFile" : "target-datachannel-client-Debug-313262ac03d57b1fe86d.json",
+					"name" : "datachannel-client",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "datachannel-client-benchmark::@77c9d0b9236c7605ed89",
+					"jsonFile" : "target-datachannel-client-benchmark-Debug-d43fb40492a544952132.json",
+					"name" : "datachannel-client-benchmark",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "datachannel-copy-paste-answerer::@23c0bdc5180a3a0202cb",
+					"jsonFile" : "target-datachannel-copy-paste-answerer-Debug-ae0aa37d083ead91b3f9.json",
+					"name" : "datachannel-copy-paste-answerer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "datachannel-copy-paste-capi-answerer::@293e3c349eccec424056",
+					"jsonFile" : "target-datachannel-copy-paste-capi-answerer-Debug-4d99ff0eaf95c3b57611.json",
+					"name" : "datachannel-copy-paste-capi-answerer",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "datachannel-copy-paste-capi-offerer::@293e3c349eccec424056",
+					"jsonFile" : "target-datachannel-copy-paste-capi-offerer-Debug-b4c487368413d7dedd80.json",
+					"name" : "datachannel-copy-paste-capi-offerer",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "datachannel-copy-paste-offerer::@23c0bdc5180a3a0202cb",
+					"jsonFile" : "target-datachannel-copy-paste-offerer-Debug-11a6e300e5c354a78cc4.json",
+					"name" : "datachannel-copy-paste-offerer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "datachannel-media-receiver::@d7c76f5638fb50d654ae",
+					"jsonFile" : "target-datachannel-media-receiver-Debug-e3373324781cbed276e3.json",
+					"name" : "datachannel-media-receiver",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "datachannel-media-sender::@dcda8d6797cef6133825",
+					"jsonFile" : "target-datachannel-media-sender-Debug-6751dbfc8d8cf15f43c2.json",
+					"name" : "datachannel-media-sender",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "datachannel-media-sfu::@511984f44e7a3b61567e",
+					"jsonFile" : "target-datachannel-media-sfu-Debug-15e97eeb51d2b7878d7f.json",
+					"name" : "datachannel-media-sfu",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-static::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-static-Debug-7d54fa34184973c83fc5.json",
+					"name" : "datachannel-static",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-tests::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-tests-Debug-8211f705cf1615df6737.json",
+					"name" : "datachannel-tests",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "datatypes_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-datatypes_driver-Debug-ce795e5488b380327f2b.json",
+					"name" : "datatypes_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-Debug-c29ee9866c9d6fab7023.json",
+					"name" : "juice",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice-static::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-static-Debug-0b110cff4f6db0fdc9d7.json",
+					"name" : "juice-static",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice-tests::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-tests-Debug-18a0746909a476467d17.json",
+					"name" : "juice-tests",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "kernel_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-kernel_driver-Debug-339a876acd150fcabafc.json",
+					"name" : "kernel_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rdbx_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-rdbx_driver-Debug-87fdc925ccfb46039272.json",
+					"name" : "rdbx_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "replay_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-replay_driver-Debug-894649cc036b0c2abbb0.json",
+					"name" : "replay_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "roc_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-roc_driver-Debug-01cc6b1872ee38ba9d30.json",
+					"name" : "roc_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "shared_screen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-shared_screen-Debug-d93e8675748c0f72bb30.json",
+					"name" : "shared_screen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "srtp2::@cc580ff65ea016719823",
+					"jsonFile" : "target-srtp2-Debug-12bf5074043056ec0789.json",
+					"name" : "srtp2",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "srtp_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-srtp_driver-Debug-02439ba30393e607d6c1.json",
+					"name" : "srtp_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "streamer::@d1ca43e65bfa9fe47d6f",
+					"jsonFile" : "target-streamer-Debug-b6be4cb2fdb8e9a084d7.json",
+					"name" : "streamer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "test_srtp::@cc580ff65ea016719823",
+					"jsonFile" : "target-test_srtp-Debug-63ff9afa2b6344c4c159.json",
+					"name" : "test_srtp",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "usrsctp::@3f62a8bf8e3e6892184e",
+					"jsonFile" : "target-usrsctp-Debug-0598f4fdf1cce3e149bb.json",
+					"name" : "usrsctp",
+					"projectIndex" : 3
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						8,
+						31
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel-Release-7150c3a8bfcb665c381e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel",
+					"targetIndexes" : 
+					[
+						3,
+						10,
+						11,
+						21,
+						22
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/plog",
+					"jsonFile" : "directory-third_party.libdatachannel.deps.plog-Release-08e9716f18c8cdc26b01.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "third_party/libdatachannel/deps/plog",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/usrsctp",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.usrsctp-Release-0940280cd44c5372b502.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/libdatachannel/deps/usrsctp",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/usrsctp/usrsctplib",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.usrsctp.usrsctplib-Release-4b0b65d55e0442a0dea9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "third_party/libdatachannel/deps/usrsctp/usrsctplib",
+					"targetIndexes" : 
+					[
+						36
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/libsrtp",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.libsrtp-Release-f49b779fd24ca2711651.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "third_party/libdatachannel/deps/libsrtp",
+					"targetIndexes" : 
+					[
+						6,
+						9,
+						23,
+						27,
+						28,
+						29,
+						30,
+						32,
+						33,
+						35
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/libjuice",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.libjuice-Release-91cd0ffeadf99bd10d96.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "third_party/libdatachannel/deps/libjuice",
+					"targetIndexes" : 
+					[
+						2,
+						24,
+						25,
+						26
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/json",
+					"jsonFile" : "directory-third_party.libdatachannel.deps.json-Release-6f75d6e31f90b29312ed.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 6,
+					"source" : "third_party/libdatachannel/deps/json",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/client",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.client-Release-199ef05858c200c58560.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/client",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/client-benchmark",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.client-benchmark-Release-125fcba7c326ebdc5c2b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/client-benchmark",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-receiver",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-receiver-Release-1c7fa5554a51d1dafe95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-receiver",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-sender",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-sender-Release-6da171ce1bdd5ff03c83.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-sender",
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-sfu",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-sfu-Release-125590aa7d5d7f6afa47.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-sfu",
+					"targetIndexes" : 
+					[
+						20
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/streamer",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.streamer-Release-aaed9cc123197482cb7b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/streamer",
+					"targetIndexes" : 
+					[
+						34
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/copy-paste",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.copy-paste-Release-4a12ee3db3a48c4c5c0f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/copy-paste",
+					"targetIndexes" : 
+					[
+						14,
+						17
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/copy-paste-capi",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.copy-paste-capi-Release-d6a7d1fd78d2521bc5c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 7,
+					"source" : "third_party/libdatachannel/examples/copy-paste-capi",
+					"targetIndexes" : 
+					[
+						7,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "shared_screen",
+					"targetIndexes" : 
+					[
+						1,
+						8,
+						31
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"name" : "libdatachannel",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						10,
+						11,
+						12,
+						13,
+						14,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						34
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "plog",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "usrsctplib",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5,
+						36
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "libsrtp2",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						6,
+						9,
+						23,
+						27,
+						28,
+						29,
+						30,
+						32,
+						33,
+						35
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "libjuice",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						24,
+						25,
+						26
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						15
+					],
+					"name" : "offerer",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						7,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@6c8bd6fc37349c1fbd74",
+					"jsonFile" : "target-ALL_BUILD-Release-2ac681fa2964e7f7dd82.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-1825f5843ddfe1f89534.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ALL_BUILD::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-ALL_BUILD-Release-18f04a8bc4d40e52e5d9.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-ALL_BUILD-Release-fb4820fc64def17d956c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "ALL_BUILD::@ff5f1d5695890e42c107",
+					"jsonFile" : "target-ALL_BUILD-Release-0cfe657be544d902a765.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@cd70e7bfc28e2e5eb92f",
+					"jsonFile" : "target-ALL_BUILD-Release-1a11cf0c2c52f963968d.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@cc580ff65ea016719823",
+					"jsonFile" : "target-ALL_BUILD-Release-b058a4692e5623724721.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "ALL_BUILD::@293e3c349eccec424056",
+					"jsonFile" : "target-ALL_BUILD-Release-efe36215865900aaee8a.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-14d04942456fd4b0b01c.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "cipher_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-cipher_driver-Release-e530921b40a3fa2243b7.json",
+					"name" : "cipher_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-Release-596fc463b214e7cd4db3.json",
+					"name" : "datachannel",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-benchmark::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-benchmark-Release-424cdb84595d65f823b4.json",
+					"name" : "datachannel-benchmark",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "datachannel-client::@1cda1b5563ea96095d36",
+					"jsonFile" : "target-datachannel-client-Release-97c227dd7de28e3f2668.json",
+					"name" : "datachannel-client",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "datachannel-client-benchmark::@77c9d0b9236c7605ed89",
+					"jsonFile" : "target-datachannel-client-benchmark-Release-21c5c4ab8c1a8b231531.json",
+					"name" : "datachannel-client-benchmark",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "datachannel-copy-paste-answerer::@23c0bdc5180a3a0202cb",
+					"jsonFile" : "target-datachannel-copy-paste-answerer-Release-fb560bf2eb11e74cf9b9.json",
+					"name" : "datachannel-copy-paste-answerer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "datachannel-copy-paste-capi-answerer::@293e3c349eccec424056",
+					"jsonFile" : "target-datachannel-copy-paste-capi-answerer-Release-3bfc82e2e7d6a92fdb9d.json",
+					"name" : "datachannel-copy-paste-capi-answerer",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "datachannel-copy-paste-capi-offerer::@293e3c349eccec424056",
+					"jsonFile" : "target-datachannel-copy-paste-capi-offerer-Release-b006918d02490ef2be45.json",
+					"name" : "datachannel-copy-paste-capi-offerer",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "datachannel-copy-paste-offerer::@23c0bdc5180a3a0202cb",
+					"jsonFile" : "target-datachannel-copy-paste-offerer-Release-0b0a9fe9cf4e2df63b35.json",
+					"name" : "datachannel-copy-paste-offerer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "datachannel-media-receiver::@d7c76f5638fb50d654ae",
+					"jsonFile" : "target-datachannel-media-receiver-Release-8300949b4d059e982490.json",
+					"name" : "datachannel-media-receiver",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "datachannel-media-sender::@dcda8d6797cef6133825",
+					"jsonFile" : "target-datachannel-media-sender-Release-27290403a80c8615b836.json",
+					"name" : "datachannel-media-sender",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "datachannel-media-sfu::@511984f44e7a3b61567e",
+					"jsonFile" : "target-datachannel-media-sfu-Release-5b747e8711f970f4ce36.json",
+					"name" : "datachannel-media-sfu",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-static::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-static-Release-1a1113a12557df271053.json",
+					"name" : "datachannel-static",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-tests::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-tests-Release-ea3fd2757036ede50a9f.json",
+					"name" : "datachannel-tests",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "datatypes_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-datatypes_driver-Release-8c3b5250e2b871d9f963.json",
+					"name" : "datatypes_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-Release-7351e2da86273e099492.json",
+					"name" : "juice",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice-static::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-static-Release-56b8819b91c0a2465b4b.json",
+					"name" : "juice-static",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice-tests::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-tests-Release-dbf112b6893052bad243.json",
+					"name" : "juice-tests",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "kernel_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-kernel_driver-Release-7a0b96e3ad3d4e31e29d.json",
+					"name" : "kernel_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rdbx_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-rdbx_driver-Release-1b43cdd24b84fc3db0a7.json",
+					"name" : "rdbx_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "replay_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-replay_driver-Release-f90c1b4ac452ef381f73.json",
+					"name" : "replay_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "roc_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-roc_driver-Release-c429a0aeeb3b8fed4024.json",
+					"name" : "roc_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "shared_screen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-shared_screen-Release-c961527ca0a1b9c4f0e6.json",
+					"name" : "shared_screen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "srtp2::@cc580ff65ea016719823",
+					"jsonFile" : "target-srtp2-Release-2ed18bc529646648ab32.json",
+					"name" : "srtp2",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "srtp_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-srtp_driver-Release-4b9e4f516c8c45320b97.json",
+					"name" : "srtp_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "streamer::@d1ca43e65bfa9fe47d6f",
+					"jsonFile" : "target-streamer-Release-0b3c894b38d3437d52da.json",
+					"name" : "streamer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "test_srtp::@cc580ff65ea016719823",
+					"jsonFile" : "target-test_srtp-Release-1df1ec80eec1727cfc89.json",
+					"name" : "test_srtp",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "usrsctp::@3f62a8bf8e3e6892184e",
+					"jsonFile" : "target-usrsctp-Release-a33cd495ad7680480751.json",
+					"name" : "usrsctp",
+					"projectIndex" : 3
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						8,
+						31
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel-MinSizeRel-8414703c6723d0a78a73.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel",
+					"targetIndexes" : 
+					[
+						3,
+						10,
+						11,
+						21,
+						22
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/plog",
+					"jsonFile" : "directory-third_party.libdatachannel.deps.plog-MinSizeRel-08e9716f18c8cdc26b01.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "third_party/libdatachannel/deps/plog",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/usrsctp",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.usrsctp-MinSizeRel-0940280cd44c5372b502.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/libdatachannel/deps/usrsctp",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/usrsctp/usrsctplib",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.usrsctp.usrsctplib-MinSizeRel-11987f9ccb474295dafb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "third_party/libdatachannel/deps/usrsctp/usrsctplib",
+					"targetIndexes" : 
+					[
+						36
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/libsrtp",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.libsrtp-MinSizeRel-fb76ddc16b5a7c1d0bda.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "third_party/libdatachannel/deps/libsrtp",
+					"targetIndexes" : 
+					[
+						6,
+						9,
+						23,
+						27,
+						28,
+						29,
+						30,
+						32,
+						33,
+						35
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/libjuice",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.libjuice-MinSizeRel-b95302c44cc144aec41a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "third_party/libdatachannel/deps/libjuice",
+					"targetIndexes" : 
+					[
+						2,
+						24,
+						25,
+						26
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/json",
+					"jsonFile" : "directory-third_party.libdatachannel.deps.json-MinSizeRel-6f75d6e31f90b29312ed.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 6,
+					"source" : "third_party/libdatachannel/deps/json",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/client",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.client-MinSizeRel-199ef05858c200c58560.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/client",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/client-benchmark",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.client-benchmark-MinSizeRel-125fcba7c326ebdc5c2b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/client-benchmark",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-receiver",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-receiver-MinSizeRel-1c7fa5554a51d1dafe95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-receiver",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-sender",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-sender-MinSizeRel-6da171ce1bdd5ff03c83.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-sender",
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-sfu",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-sfu-MinSizeRel-125590aa7d5d7f6afa47.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-sfu",
+					"targetIndexes" : 
+					[
+						20
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/streamer",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.streamer-MinSizeRel-aaed9cc123197482cb7b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/streamer",
+					"targetIndexes" : 
+					[
+						34
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/copy-paste",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.copy-paste-MinSizeRel-4a12ee3db3a48c4c5c0f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/copy-paste",
+					"targetIndexes" : 
+					[
+						14,
+						17
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/copy-paste-capi",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.copy-paste-capi-MinSizeRel-d6a7d1fd78d2521bc5c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 7,
+					"source" : "third_party/libdatachannel/examples/copy-paste-capi",
+					"targetIndexes" : 
+					[
+						7,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "shared_screen",
+					"targetIndexes" : 
+					[
+						1,
+						8,
+						31
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"name" : "libdatachannel",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						10,
+						11,
+						12,
+						13,
+						14,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						34
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "plog",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "usrsctplib",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5,
+						36
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "libsrtp2",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						6,
+						9,
+						23,
+						27,
+						28,
+						29,
+						30,
+						32,
+						33,
+						35
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "libjuice",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						24,
+						25,
+						26
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						15
+					],
+					"name" : "offerer",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						7,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@6c8bd6fc37349c1fbd74",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-2ac681fa2964e7f7dd82.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-1825f5843ddfe1f89534.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ALL_BUILD::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-18f04a8bc4d40e52e5d9.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-fb4820fc64def17d956c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "ALL_BUILD::@ff5f1d5695890e42c107",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-0cfe657be544d902a765.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@cd70e7bfc28e2e5eb92f",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-1a11cf0c2c52f963968d.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@cc580ff65ea016719823",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-b058a4692e5623724721.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "ALL_BUILD::@293e3c349eccec424056",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-efe36215865900aaee8a.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-14d04942456fd4b0b01c.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "cipher_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-cipher_driver-MinSizeRel-ee93bb6db6d9b5c02756.json",
+					"name" : "cipher_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-MinSizeRel-7c8a309981cd2d2d27bc.json",
+					"name" : "datachannel",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-benchmark::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-benchmark-MinSizeRel-c857484730d073ea0848.json",
+					"name" : "datachannel-benchmark",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "datachannel-client::@1cda1b5563ea96095d36",
+					"jsonFile" : "target-datachannel-client-MinSizeRel-ec03ca1ead7db2d9d2e3.json",
+					"name" : "datachannel-client",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "datachannel-client-benchmark::@77c9d0b9236c7605ed89",
+					"jsonFile" : "target-datachannel-client-benchmark-MinSizeRel-840e637a5210aaa2dd8f.json",
+					"name" : "datachannel-client-benchmark",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "datachannel-copy-paste-answerer::@23c0bdc5180a3a0202cb",
+					"jsonFile" : "target-datachannel-copy-paste-answerer-MinSizeRel-a76dc9ccd3a7b52d3e1d.json",
+					"name" : "datachannel-copy-paste-answerer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "datachannel-copy-paste-capi-answerer::@293e3c349eccec424056",
+					"jsonFile" : "target-datachannel-copy-paste-capi-answerer-MinSizeRel-226001ab1c6230a9cb43.json",
+					"name" : "datachannel-copy-paste-capi-answerer",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "datachannel-copy-paste-capi-offerer::@293e3c349eccec424056",
+					"jsonFile" : "target-datachannel-copy-paste-capi-offerer-MinSizeRel-815ab50288ccef7f6f86.json",
+					"name" : "datachannel-copy-paste-capi-offerer",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "datachannel-copy-paste-offerer::@23c0bdc5180a3a0202cb",
+					"jsonFile" : "target-datachannel-copy-paste-offerer-MinSizeRel-559c693271eede788d78.json",
+					"name" : "datachannel-copy-paste-offerer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "datachannel-media-receiver::@d7c76f5638fb50d654ae",
+					"jsonFile" : "target-datachannel-media-receiver-MinSizeRel-bf231088e09a63523e3e.json",
+					"name" : "datachannel-media-receiver",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "datachannel-media-sender::@dcda8d6797cef6133825",
+					"jsonFile" : "target-datachannel-media-sender-MinSizeRel-7fb310d7c0d46db30571.json",
+					"name" : "datachannel-media-sender",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "datachannel-media-sfu::@511984f44e7a3b61567e",
+					"jsonFile" : "target-datachannel-media-sfu-MinSizeRel-2bf4419617e789f68e56.json",
+					"name" : "datachannel-media-sfu",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-static::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-static-MinSizeRel-6a230bf987aa379679b5.json",
+					"name" : "datachannel-static",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-tests::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-tests-MinSizeRel-2a3b2e296868fdf0f198.json",
+					"name" : "datachannel-tests",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "datatypes_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-datatypes_driver-MinSizeRel-990032fe8ff1d77d058d.json",
+					"name" : "datatypes_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-MinSizeRel-cf575fb79a62a5a9a1c2.json",
+					"name" : "juice",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice-static::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-static-MinSizeRel-fe135eef9ba23827afef.json",
+					"name" : "juice-static",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice-tests::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-tests-MinSizeRel-8b9afa59c51a8bf6c0fd.json",
+					"name" : "juice-tests",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "kernel_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-kernel_driver-MinSizeRel-65951d26eb5d5d252e51.json",
+					"name" : "kernel_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rdbx_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-rdbx_driver-MinSizeRel-d657be0c3fa1a755a264.json",
+					"name" : "rdbx_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "replay_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-replay_driver-MinSizeRel-d755a05429d26afad1ee.json",
+					"name" : "replay_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "roc_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-roc_driver-MinSizeRel-0b5e835f1ee14380cebb.json",
+					"name" : "roc_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "shared_screen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-shared_screen-MinSizeRel-52fd8f8b86cb820af2d9.json",
+					"name" : "shared_screen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "srtp2::@cc580ff65ea016719823",
+					"jsonFile" : "target-srtp2-MinSizeRel-0313151fd048f2f7d3b7.json",
+					"name" : "srtp2",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "srtp_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-srtp_driver-MinSizeRel-73f5c6753c515588e34a.json",
+					"name" : "srtp_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "streamer::@d1ca43e65bfa9fe47d6f",
+					"jsonFile" : "target-streamer-MinSizeRel-a0915f8c078eecf35624.json",
+					"name" : "streamer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "test_srtp::@cc580ff65ea016719823",
+					"jsonFile" : "target-test_srtp-MinSizeRel-5f901a273409c39673d9.json",
+					"name" : "test_srtp",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "usrsctp::@3f62a8bf8e3e6892184e",
+					"jsonFile" : "target-usrsctp-MinSizeRel-790d00553f3461e9edfd.json",
+					"name" : "usrsctp",
+					"projectIndex" : 3
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						8,
+						31
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel-RelWithDebInfo-429456381da9cc0f364e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel",
+					"targetIndexes" : 
+					[
+						3,
+						10,
+						11,
+						21,
+						22
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/plog",
+					"jsonFile" : "directory-third_party.libdatachannel.deps.plog-RelWithDebInfo-08e9716f18c8cdc26b01.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "third_party/libdatachannel/deps/plog",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/usrsctp",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.usrsctp-RelWithDebInfo-0940280cd44c5372b502.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 3,
+					"source" : "third_party/libdatachannel/deps/usrsctp",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/usrsctp/usrsctplib",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.usrsctp.usrsctplib-RelWithDebInfo-041aa6b9aa4af7c529bb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 3,
+					"source" : "third_party/libdatachannel/deps/usrsctp/usrsctplib",
+					"targetIndexes" : 
+					[
+						36
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/libsrtp",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.libsrtp-RelWithDebInfo-b72c47f3d71034717dbf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 4,
+					"source" : "third_party/libdatachannel/deps/libsrtp",
+					"targetIndexes" : 
+					[
+						6,
+						9,
+						23,
+						27,
+						28,
+						29,
+						30,
+						32,
+						33,
+						35
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/libjuice",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-third_party.libdatachannel.deps.libjuice-RelWithDebInfo-e3315ac18e69d544d3f6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 5,
+					"source" : "third_party/libdatachannel/deps/libjuice",
+					"targetIndexes" : 
+					[
+						2,
+						24,
+						25,
+						26
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/deps/json",
+					"jsonFile" : "directory-third_party.libdatachannel.deps.json-RelWithDebInfo-6f75d6e31f90b29312ed.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 6,
+					"source" : "third_party/libdatachannel/deps/json",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/client",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.client-RelWithDebInfo-199ef05858c200c58560.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/client",
+					"targetIndexes" : 
+					[
+						12
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/client-benchmark",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.client-benchmark-RelWithDebInfo-125fcba7c326ebdc5c2b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/client-benchmark",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-receiver",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-receiver-RelWithDebInfo-1c7fa5554a51d1dafe95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-receiver",
+					"targetIndexes" : 
+					[
+						18
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-sender",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-sender-RelWithDebInfo-6da171ce1bdd5ff03c83.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-sender",
+					"targetIndexes" : 
+					[
+						19
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/media-sfu",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.media-sfu-RelWithDebInfo-125590aa7d5d7f6afa47.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/media-sfu",
+					"targetIndexes" : 
+					[
+						20
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/streamer",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.streamer-RelWithDebInfo-aaed9cc123197482cb7b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/streamer",
+					"targetIndexes" : 
+					[
+						34
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/copy-paste",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.copy-paste-RelWithDebInfo-4a12ee3db3a48c4c5c0f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third_party/libdatachannel/examples/copy-paste",
+					"targetIndexes" : 
+					[
+						14,
+						17
+					]
+				},
+				{
+					"build" : "third_party/libdatachannel/examples/copy-paste-capi",
+					"jsonFile" : "directory-third_party.libdatachannel.examples.copy-paste-capi-RelWithDebInfo-d6a7d1fd78d2521bc5c8.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 7,
+					"source" : "third_party/libdatachannel/examples/copy-paste-capi",
+					"targetIndexes" : 
+					[
+						7,
+						15,
+						16
+					]
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "shared_screen",
+					"targetIndexes" : 
+					[
+						1,
+						8,
+						31
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"directoryIndexes" : 
+					[
+						1,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					],
+					"name" : "libdatachannel",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						3,
+						10,
+						11,
+						12,
+						13,
+						14,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						34
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "plog",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3,
+						4
+					],
+					"name" : "usrsctplib",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						5,
+						36
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "libsrtp2",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						6,
+						9,
+						23,
+						27,
+						28,
+						29,
+						30,
+						32,
+						33,
+						35
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						6
+					],
+					"name" : "libjuice",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						2,
+						24,
+						25,
+						26
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						7
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						15
+					],
+					"name" : "offerer",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						7,
+						15,
+						16
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "ALL_BUILD::@6c8bd6fc37349c1fbd74",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-2ac681fa2964e7f7dd82.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-1825f5843ddfe1f89534.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "ALL_BUILD::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-18f04a8bc4d40e52e5d9.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "ALL_BUILD::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-fb4820fc64def17d956c.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "ALL_BUILD::@ff5f1d5695890e42c107",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-0cfe657be544d902a765.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 6
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "ALL_BUILD::@cd70e7bfc28e2e5eb92f",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-1a11cf0c2c52f963968d.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "ALL_BUILD::@cc580ff65ea016719823",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-b058a4692e5623724721.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "ALL_BUILD::@293e3c349eccec424056",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-efe36215865900aaee8a.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-14d04942456fd4b0b01c.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "cipher_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-cipher_driver-RelWithDebInfo-f121c5ae92385ecf8dee.json",
+					"name" : "cipher_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-RelWithDebInfo-a78df37f5b5bea5ca1e7.json",
+					"name" : "datachannel",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-benchmark::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-benchmark-RelWithDebInfo-fae1a2ba0a3883f3e9ac.json",
+					"name" : "datachannel-benchmark",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "datachannel-client::@1cda1b5563ea96095d36",
+					"jsonFile" : "target-datachannel-client-RelWithDebInfo-062741600320543f42e5.json",
+					"name" : "datachannel-client",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "datachannel-client-benchmark::@77c9d0b9236c7605ed89",
+					"jsonFile" : "target-datachannel-client-benchmark-RelWithDebInfo-b4b2d9309b385c301bd7.json",
+					"name" : "datachannel-client-benchmark",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "datachannel-copy-paste-answerer::@23c0bdc5180a3a0202cb",
+					"jsonFile" : "target-datachannel-copy-paste-answerer-RelWithDebInfo-769a7934edaafff099a1.json",
+					"name" : "datachannel-copy-paste-answerer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "datachannel-copy-paste-capi-answerer::@293e3c349eccec424056",
+					"jsonFile" : "target-datachannel-copy-paste-capi-answerer-RelWithDebInfo-a201e87edd71c29dea42.json",
+					"name" : "datachannel-copy-paste-capi-answerer",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "datachannel-copy-paste-capi-offerer::@293e3c349eccec424056",
+					"jsonFile" : "target-datachannel-copy-paste-capi-offerer-RelWithDebInfo-dd799519047d4b8e69f1.json",
+					"name" : "datachannel-copy-paste-capi-offerer",
+					"projectIndex" : 7
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "datachannel-copy-paste-offerer::@23c0bdc5180a3a0202cb",
+					"jsonFile" : "target-datachannel-copy-paste-offerer-RelWithDebInfo-88941cbe71448c96f37d.json",
+					"name" : "datachannel-copy-paste-offerer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "datachannel-media-receiver::@d7c76f5638fb50d654ae",
+					"jsonFile" : "target-datachannel-media-receiver-RelWithDebInfo-ebba803528b8b3f9e7c9.json",
+					"name" : "datachannel-media-receiver",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "datachannel-media-sender::@dcda8d6797cef6133825",
+					"jsonFile" : "target-datachannel-media-sender-RelWithDebInfo-c4f51b7cc744addab2a9.json",
+					"name" : "datachannel-media-sender",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "datachannel-media-sfu::@511984f44e7a3b61567e",
+					"jsonFile" : "target-datachannel-media-sfu-RelWithDebInfo-45860a04c8fc851dc503.json",
+					"name" : "datachannel-media-sfu",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-static::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-static-RelWithDebInfo-1dd7395315370253d346.json",
+					"name" : "datachannel-static",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "datachannel-tests::@e12ed72777ce7523f9d0",
+					"jsonFile" : "target-datachannel-tests-RelWithDebInfo-4586480ca2f0d9a17f41.json",
+					"name" : "datachannel-tests",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "datatypes_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-datatypes_driver-RelWithDebInfo-beb8087dd98815d0463c.json",
+					"name" : "datatypes_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-RelWithDebInfo-511a2ab19b4632b06e52.json",
+					"name" : "juice",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice-static::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-static-RelWithDebInfo-a0cbd700ad4a632343e3.json",
+					"name" : "juice-static",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "juice-tests::@9e494196cd2deb1ce048",
+					"jsonFile" : "target-juice-tests-RelWithDebInfo-371b7a3a56ce130a02db.json",
+					"name" : "juice-tests",
+					"projectIndex" : 5
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "kernel_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-kernel_driver-RelWithDebInfo-09893b2f8e20f3d92099.json",
+					"name" : "kernel_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "rdbx_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-rdbx_driver-RelWithDebInfo-6e080acf6fd2088829bd.json",
+					"name" : "rdbx_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "replay_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-replay_driver-RelWithDebInfo-8345ad207d9218af3827.json",
+					"name" : "replay_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "roc_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-roc_driver-RelWithDebInfo-4bc1f07818fbae56f354.json",
+					"name" : "roc_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "shared_screen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-shared_screen-RelWithDebInfo-0f4a044c7c03f1357627.json",
+					"name" : "shared_screen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "srtp2::@cc580ff65ea016719823",
+					"jsonFile" : "target-srtp2-RelWithDebInfo-9e4a9745f4245bed6ef5.json",
+					"name" : "srtp2",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "srtp_driver::@cc580ff65ea016719823",
+					"jsonFile" : "target-srtp_driver-RelWithDebInfo-8a6dbb753d017e3fa209.json",
+					"name" : "srtp_driver",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 13,
+					"id" : "streamer::@d1ca43e65bfa9fe47d6f",
+					"jsonFile" : "target-streamer-RelWithDebInfo-5eecd7477b9db46a660b.json",
+					"name" : "streamer",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "test_srtp::@cc580ff65ea016719823",
+					"jsonFile" : "target-test_srtp-RelWithDebInfo-87187d336beb1330b8a9.json",
+					"name" : "test_srtp",
+					"projectIndex" : 4
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "usrsctp::@3f62a8bf8e3e6892184e",
+					"jsonFile" : "target-usrsctp-RelWithDebInfo-992f1d7fadc671a6aae0.json",
+					"name" : "usrsctp",
+					"projectIndex" : 3
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/vsc/BytesScreenShare/build",
+		"source" : "E:/vsc/BytesScreenShare"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

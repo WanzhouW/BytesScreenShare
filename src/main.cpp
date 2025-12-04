@@ -1,4 +1,4 @@
-#include "shared_screen.h"
+#include "ui/shared_screen.h"
 
 #include <QApplication>
 #pragma comment(lib, "user32.lib")

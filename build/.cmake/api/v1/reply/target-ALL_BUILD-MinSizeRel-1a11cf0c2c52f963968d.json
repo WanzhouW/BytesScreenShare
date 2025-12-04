@@ -1,0 +1,36 @@
+{
+	"backtrace" : 0,
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : 
+		[
+			"third_party/libdatachannel/deps/usrsctp/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "usrsctp::@3f62a8bf8e3e6892184e"
+		},
+		{
+			"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "ALL_BUILD::@cd70e7bfc28e2e5eb92f",
+	"isGeneratorProvided" : true,
+	"name" : "ALL_BUILD",
+	"paths" : 
+	{
+		"build" : "third_party/libdatachannel/deps/usrsctp",
+		"source" : "third_party/libdatachannel/deps/usrsctp"
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

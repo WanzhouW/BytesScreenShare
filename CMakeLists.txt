@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16) # CMake install : https://cmake.org/downloa
 project(shared_screen LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_PREFIX_PATH "d:/Qt/6.8.3/msvc2022_64") # Qt Kit Dir
+set(CMAKE_PREFIX_PATH "H:/qt6/6.8.3/msvc2022_64") # Qt Kit Dir
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 兼容 Qt6 / Qt5 的查找写法
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Gui Widgets Multimedia MultimediaWidgets WebSockets Network)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Gui Widgets Multimedia MultimediaWidgets WebSockets Network)
 
 aux_source_directory(./src srcs)
 
@@ -19,16 +19,38 @@ aux_source_directory(./src srcs)
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
-add_executable(${PROJECT_NAME}
-    WIN32 # If you need a terminal for debug, please comment this statement
-    ${srcs}
+# ---- libdatachannel ----
+add_subdirectory(third_party/libdatachannel)
+
+add_executable(shared_screen
+    src/main.cpp
+
+    src/ui/shared_screen.cpp
+    src/ui/shared_screen.ui
+
+    src/signaling/WsSignalingClient.cpp
+    src/rtc/PeerConnectionManager.cpp
+)
+
+# ---- 头文件搜索路径 ----
+target_include_directories(shared_screen PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/ui
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/signaling
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/rtc
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_party/libdatachannel/include
 )
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
+        Qt${QT_VERSION_MAJOR}::Core
+        Qt${QT_VERSION_MAJOR}::Gui
         Qt${QT_VERSION_MAJOR}::Widgets
+        Qt${QT_VERSION_MAJOR}::Network
         Qt${QT_VERSION_MAJOR}::Multimedia
+        Qt${QT_VERSION_MAJOR}::WebSockets
         Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+        datachannel
 )
 
 # # ========================================

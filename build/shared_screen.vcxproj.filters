@@ -1,31 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\shared_screen\build\shared_screen_autogen\mocs_compilation_Debug.cpp">
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\mocs_compilation_Debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\shared_screen\src\main.cpp">
+    <ClCompile Include="E:\vsc\BytesScreenShare\src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\shared_screen\src\shared_screen.cpp">
+    <ClCompile Include="E:\vsc\BytesScreenShare\src\ui\shared_screen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\shared_screen\build\shared_screen_autogen\mocs_compilation_Release.cpp">
+    <ClCompile Include="E:\vsc\BytesScreenShare\src\signaling\WsSignalingClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\shared_screen\build\shared_screen_autogen\mocs_compilation_MinSizeRel.cpp">
+    <ClCompile Include="E:\vsc\BytesScreenShare\src\rtc\PeerConnectionManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\shared_screen\build\shared_screen_autogen\mocs_compilation_RelWithDebInfo.cpp">
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\mocs_compilation_RelWithDebInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\shared_screen\CMakeLists.txt" />
+    <ClInclude Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\include_Debug\src\ui\ui_shared_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\include_Release\src\ui\ui_shared_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\include_MinSizeRel\src\ui\ui_shared_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\include_RelWithDebInfo\src\ui\ui_shared_screen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="E:\vsc\BytesScreenShare\build\CMakeFiles\a8a98263868abda1bc97343b02d02aa4\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\vsc\BytesScreenShare\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\vsc\BytesScreenShare\src\ui\shared_screen.ui" />
+    <None Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\autouic_Debug.stamp" />
+    <None Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\autouic_Release.stamp" />
+    <None Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="E:\vsc\BytesScreenShare\build\shared_screen_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{91FE706A-3A92-3612-A468-88BEF94565BD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0B3E677E-C09C-3104-BBB1-27B2BA1E4E27}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{991B43C7-E980-360D-A3AF-E47E58174A1F}</UniqueIdentifier>
+      <UniqueIdentifier>{B5B2E0E3-3C47-3C00-927D-0C95FF0D1E2A}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

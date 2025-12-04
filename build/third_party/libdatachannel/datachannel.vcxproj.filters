@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\third_party\libdatachannel\datachannel_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\candidate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\channel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\configuration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\datachannel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\dependencydescriptor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\description.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\iceudpmuxlistener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\mediahandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\message.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\peerconnection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\rtcpreceivingsession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\track.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\websocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\websocketserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\rtppacketizationconfig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\rtcpsrreporter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\rtppacketizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\rtpdepacketizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\h264rtppacketizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\h264rtpdepacketizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\nalunit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\h265rtppacketizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\h265rtpdepacketizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\h265nalunit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\av1rtppacketizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\rtcpnackresponder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\rtp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\capi.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\plihandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\pacinghandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\rembhandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\certificate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\channel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\datachannel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\dtlssrtptransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\dtlstransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\icetransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\iceudpmuxlistener.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\init.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\peerconnection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\logcounter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\sctptransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\threadpool.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\tls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\track.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\processor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\sha.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\pollinterrupter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\pollservice.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\http.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\httpproxytransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\tcpserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\tcptransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\tlstransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\transport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\verifiedtlstransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\websocket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\websocketserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\wstransport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\wshandshake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\third_party\libdatachannel\datachannel_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\third_party\libdatachannel\datachannel_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\vsc\BytesScreenShare\build\third_party\libdatachannel\datachannel_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\candidate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\channel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\configuration.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\datachannel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\dependencydescriptor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\description.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\iceudpmuxlistener.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\mediahandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtcpreceivingsession.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\common.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\global.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\message.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\frameinfo.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\peerconnection.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\reliability.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtc.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtp.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\track.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\websocket.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\websocketserver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtppacketizationconfig.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtcpsrreporter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtppacketizer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtpdepacketizer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\h264rtppacketizer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\h264rtpdepacketizer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\nalunit.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\h265rtppacketizer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\h265rtpdepacketizer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\h265nalunit.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\av1rtppacketizer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rtcpnackresponder.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\utils.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\plihandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\pacinghandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\rembhandler.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\include\rtc\version.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\certificate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\channel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\datachannel.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\dtlssrtptransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\dtlstransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\icetransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\iceudpmuxlistener.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\init.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\internals.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\peerconnection.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\queue.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\logcounter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\sctptransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\threadpool.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\tls.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\track.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\utils.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\processor.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\sha.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\pollinterrupter.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\pollservice.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\http.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\httpproxytransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\tcpserver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\tcptransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\tlstransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\transport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\verifiedtlstransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\websocket.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\websocketserver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\wstransport.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\src\impl\wshandshake.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\vsc\BytesScreenShare\third_party\libdatachannel\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{0B3E677E-C09C-3104-BBB1-27B2BA1E4E27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{B5B2E0E3-3C47-3C00-927D-0C95FF0D1E2A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,188 @@
+{
+	"AUTOGEN_COMMAND_LINE_LENGTH_MAX" : 32000,
+	"BUILD_DIR" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen",
+	"CMAKE_BINARY_DIR" : "E:/vsc/BytesScreenShare/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client",
+	"CMAKE_EXECUTABLE" : "D:/visial studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client/CMakeLists.txt",
+		"D:/visial studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindThreads.cmake",
+		"D:/visial studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckLibraryExists.cmake",
+		"D:/visial studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckIncludeFileCXX.cmake",
+		"D:/visial studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/CheckCXXSourceCompiles.cmake",
+		"D:/visial studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindPackageHandleStandardArgs.cmake",
+		"D:/visial studio/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.31/Modules/FindPackageMessage.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "E:/vsc/BytesScreenShare",
+	"CROSS_CONFIG" : false,
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client/getopt.h",
+			"MU",
+			"EWIEGA46WW/moc_getopt.cpp",
+			null
+		],
+		[
+			"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client/parse_cl.h",
+			"MU",
+			"EWIEGA46WW/moc_parse_cl.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/include",
+	"INCLUDE_DIR_Debug" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/include_Release",
+	"MOC_COMPILATION_FILE" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/mocs_compilation.cpp",
+	"MOC_COMPILATION_FILE_Debug" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/mocs_compilation_Debug.cpp",
+	"MOC_COMPILATION_FILE_MinSizeRel" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/mocs_compilation_MinSizeRel.cpp",
+	"MOC_COMPILATION_FILE_RelWithDebInfo" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/mocs_compilation_RelWithDebInfo.cpp",
+	"MOC_COMPILATION_FILE_Release" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/datachannel-client_autogen/mocs_compilation_Release.cpp",
+	"MOC_DEFINITIONS" : [],
+	"MOC_DEFINITIONS_Debug" : 
+	[
+		"NOMINMAX",
+		"RTC_ENABLE_MEDIA=1",
+		"RTC_ENABLE_WEBSOCKET=1",
+		"STATIC_GETOPT",
+		"WIN32",
+		"WIN32_LEAN_AND_MEAN",
+		"_CRT_SECURE_NO_WARNINGS"
+	],
+	"MOC_DEFINITIONS_MinSizeRel" : 
+	[
+		"NOMINMAX",
+		"RTC_ENABLE_MEDIA=1",
+		"RTC_ENABLE_WEBSOCKET=1",
+		"STATIC_GETOPT",
+		"WIN32",
+		"WIN32_LEAN_AND_MEAN",
+		"_CRT_SECURE_NO_WARNINGS"
+	],
+	"MOC_DEFINITIONS_RelWithDebInfo" : 
+	[
+		"NOMINMAX",
+		"RTC_ENABLE_MEDIA=1",
+		"RTC_ENABLE_WEBSOCKET=1",
+		"STATIC_GETOPT",
+		"WIN32",
+		"WIN32_LEAN_AND_MEAN",
+		"_CRT_SECURE_NO_WARNINGS"
+	],
+	"MOC_DEFINITIONS_Release" : 
+	[
+		"NOMINMAX",
+		"RTC_ENABLE_MEDIA=1",
+		"RTC_ENABLE_WEBSOCKET=1",
+		"STATIC_GETOPT",
+		"WIN32",
+		"WIN32_LEAN_AND_MEAN",
+		"_CRT_SECURE_NO_WARNINGS"
+	],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : [],
+	"MOC_INCLUDES_Debug" : 
+	[
+		"E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/include",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/json/include"
+	],
+	"MOC_INCLUDES_MinSizeRel" : 
+	[
+		"E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/include",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/json/include"
+	],
+	"MOC_INCLUDES_RelWithDebInfo" : 
+	[
+		"E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/include",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/json/include"
+	],
+	"MOC_INCLUDES_Release" : 
+	[
+		"E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/include",
+		"E:/vsc/BytesScreenShare/third_party/libdatachannel/deps/json/include"
+	],
+	"MOC_MACRO_NAMES" : 
+	[
+		"Q_OBJECT",
+		"Q_GADGET",
+		"Q_NAMESPACE",
+		"Q_NAMESPACE_EXPORT",
+		"Q_GADGET_EXPORT",
+		"Q_ENUM_NS"
+	],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : [],
+	"MOC_PREDEFS_FILE" : "",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : true,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/ParseCache.txt",
+	"PARSE_CACHE_FILE_Debug" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/ParseCache_Debug.txt",
+	"PARSE_CACHE_FILE_MinSizeRel" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/ParseCache_MinSizeRel.txt",
+	"PARSE_CACHE_FILE_RelWithDebInfo" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/ParseCache_RelWithDebInfo.txt",
+	"PARSE_CACHE_FILE_Release" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/ParseCache_Release.txt",
+	"QT_MOC_EXECUTABLE" : "",
+	"QT_MOC_EXECUTABLE_Debug" : "H:/qt6/6.8.3/msvc2022_64/bin/moc.exe",
+	"QT_MOC_EXECUTABLE_MinSizeRel" : "H:/qt6/6.8.3/msvc2022_64/bin/moc.exe",
+	"QT_MOC_EXECUTABLE_RelWithDebInfo" : "H:/qt6/6.8.3/msvc2022_64/bin/moc.exe",
+	"QT_MOC_EXECUTABLE_Release" : "H:/qt6/6.8.3/msvc2022_64/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "",
+	"QT_UIC_EXECUTABLE_Debug" : "H:/qt6/6.8.3/msvc2022_64/bin/uic.exe",
+	"QT_UIC_EXECUTABLE_MinSizeRel" : "H:/qt6/6.8.3/msvc2022_64/bin/uic.exe",
+	"QT_UIC_EXECUTABLE_RelWithDebInfo" : "H:/qt6/6.8.3/msvc2022_64/bin/uic.exe",
+	"QT_UIC_EXECUTABLE_Release" : "H:/qt6/6.8.3/msvc2022_64/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 6,
+	"QT_VERSION_MINOR" : 8,
+	"SETTINGS_FILE" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/AutogenUsed.txt",
+	"SETTINGS_FILE_Debug" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/AutogenUsed_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/AutogenUsed_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/AutogenUsed_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "E:/vsc/BytesScreenShare/build/third_party/libdatachannel/examples/client/CMakeFiles/datachannel-client_autogen.dir/AutogenUsed_Release.txt",
+	"SOURCES" : 
+	[
+		[
+			"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client/getopt.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client/main.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/vsc/BytesScreenShare/third_party/libdatachannel/examples/client/parse_cl.cpp",
+			"MU",
+			null
+		]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

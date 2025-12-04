@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "third_party/libdatachannel/examples/copy-paste",
+		"source" : "third_party/libdatachannel/examples/copy-paste"
+	}
+}
