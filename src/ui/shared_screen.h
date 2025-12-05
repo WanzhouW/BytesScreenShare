@@ -1,6 +1,6 @@
 #pragma once
 // ===============================
-// 共享屏幕示例主窗口
+// 共享屏幕示例主窗口（仿腾讯会议布局）
 // 功能：
 //  - 语音开关、屏幕共享
 //  - 聊天面板（支持收/发、未读提醒）
@@ -10,6 +10,7 @@
 // 说明：集成了真实的音视频录制功能，使用 QMediaRecorder
 // ===============================
 #include <QMainWindow>
+#include <QPushButton>
 #include <QPointer>
 #include <QLabel>
 #include <QTime>
@@ -27,6 +28,8 @@ namespace Ui
 }
 QT_END_NAMESPACE
 
+class WsSignalingClient;
+class PeerConnectionManager;
 class QDockWidget;
 class QListWidget;
 class QPushButton;
@@ -74,6 +77,10 @@ private slots:
     void updateRecordingTime();
     void captureScreen();
 
+    // 连接相关槽函数
+    void onSignalingConnected();
+    void onSignalingDisconnected();
+
 private:
     // ===== 帮助函数 =====
     void toggleChatPanel();
@@ -94,6 +101,11 @@ private:
 private:
     Ui::shared_screen *ui;
 
+    // ===== 新增：P2P 相关 =====
+    WsSignalingClient* m_signaling = nullptr;
+    PeerConnectionManager* m_pcm = nullptr;
+    bool m_isCaller = false;   // 先简单固定：一端 true，一端 false
+    
     // 状态管理
     bool isChatVisible{false};
     bool isVoiceOn{false};

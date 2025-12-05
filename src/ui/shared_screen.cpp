@@ -25,6 +25,8 @@
 #include <QFileDialog>
 #include <QProcess>
 
+#include "../signaling/WsSignalingClient.hpp"
+#include "../rtc/PeerConnectionManager.hpp"
 // 添加诊断函数
 void shared_screen::diagnoseMultimediaSupport()
 {
@@ -175,43 +177,43 @@ shared_screen::shared_screen(QWidget *parent)
 
     // ====== 底部控制栏按钮 ======
     btnVoice = new QPushButton(this);
-    btnVoice->setIcon(QIcon("../icons/voice-off.png"));
+    btnVoice->setIcon(QIcon("../../src/icons/voice-off.png"));
     btnVoice->setIconSize(QSize(32, 32));
     btnVoice->setToolTip(u8"开启/关闭麦克风");
 
     btnShareScreen = new QPushButton(this);
-    btnShareScreen->setIcon(QIcon("../icons/monitor-one.png"));
+    btnShareScreen->setIcon(QIcon("../../src/icons/monitor-one.png"));
     btnShareScreen->setIconSize(QSize(32, 32));
     btnShareScreen->setToolTip(u8"开始/停止共享屏幕");
 
     btnChat = new QPushButton(this);
-    btnChat->setIcon(QIcon("../icons/message.png"));
+    btnChat->setIcon(QIcon("../../src/icons/message.png"));
     btnChat->setIconSize(QSize(32, 32));
     btnChat->setToolTip(u8"显示/隐藏聊天面板");
 
     btnVideo = new QPushButton(this);
-    btnVideo->setIcon(QIcon("../icons/camera-one.png"));
+    btnVideo->setIcon(QIcon("../../src/icons/camera-one.png"));
     btnVideo->setIconSize(QSize(32, 32));
     btnVideo->setToolTip(u8"开启/关闭摄像头");
 
     btnParticipants = new QPushButton(this);
-    btnParticipants->setIcon(QIcon("../icons/participants.png"));
+    btnParticipants->setIcon(QIcon("../../src/icons/participants.png"));
     btnParticipants->setIconSize(QSize(32, 32));
     btnParticipants->setToolTip(u8"参会者");
     btnParticipants->setCheckable(true);
 
     btnRecord = new QPushButton(this);
-    btnRecord->setIcon(QIcon("../icons/facetime.png"));
+    btnRecord->setIcon(QIcon("../../src/icons/facetime.png"));
     btnRecord->setIconSize(QSize(32, 32));
     btnRecord->setToolTip(u8"开始/停止录制");
 
     btnRaiseHand = new QPushButton(this);
-    btnRaiseHand->setIcon(QIcon("../icons/palm.png"));
+    btnRaiseHand->setIcon(QIcon("../../src/icons/palm.png"));
     btnRaiseHand->setIconSize(QSize(32, 32));
     btnRaiseHand->setToolTip(u8"举手");
 
     btnLeave = new QPushButton(this);
-    btnLeave->setIcon(QIcon("../icons/phone-off.png"));
+    btnLeave->setIcon(QIcon("../../src/icons/phone-off.png"));
     btnLeave->setIconSize(QSize(20, 20));
     btnLeave->setText(u8"离开会议");
     netLabel = new QLabel(u8"网络:良好", this);
@@ -386,7 +388,7 @@ shared_screen::~shared_screen()
         delete audioInput;
         audioInput = nullptr;
     }
-
+    // if(m_signaling) m_signaling-> disconnectFromServer();
     delete ui;
 }
 
@@ -402,6 +404,23 @@ void shared_screen::on_btnJoinMeetingClicked()
         QMessageBox::warning(this, "提示", "请输入会议房间号！");
         return;
     }
+
+    qDebug() << "=== Start to connect server ===";
+    m_signaling = new WsSignalingClient(this);
+
+    connect(m_signaling, &WsSignalingClient::connected, 
+            this, &shared_screen::onSignalingConnected);
+    
+    // 连接失败信号
+    connect(m_signaling, &WsSignalingClient::disconnected, 
+            this, &shared_screen::onSignalingDisconnected);
+
+    m_signaling->connectToServer("127.0.0.1", 11290);
+
+}
+
+void shared_screen::onSignalingConnected()
+{
     ui->stackedWidget->setCurrentIndex(1);
     ui->statusLabel->setText("状态:未连接");
 
@@ -423,8 +442,15 @@ void shared_screen::on_btnJoinMeetingClicked()
     btnRecord->setChecked(false);
     btnRaiseHand->setChecked(false);
     btnChat->setText("");
-    btnVoice->setIcon(QIcon("../icons/voice-off.png"));
+    btnVoice->setIcon(QIcon("../../src/icons/voice-off.png"));
     // =============== 之后的逻辑 ===============
+}
+
+void shared_screen::onSignalingDisconnected()
+{
+    qDebug() << "信令服务器断开连接";
+    QMessageBox::warning(this, "提示", "无法连接服务器");
+    return;
 }
 
 // 语音按钮
@@ -434,12 +460,12 @@ void shared_screen::on_btnVoiceClicked()
     btnVoice->setChecked(isVoiceOn);
     if (isVoiceOn)
     {
-        btnVoice->setIcon(QIcon("../icons/voice.png"));
+        btnVoice->setIcon(QIcon("../../src/icons/voice.png"));
         ui->statusLabel->setText(u8"麦克风已开启");
     }
     else
     {
-        btnVoice->setIcon(QIcon("../icons/voice-off.png"));
+        btnVoice->setIcon(QIcon("../../src/icons/voice-off.png"));
         ui->statusLabel->setText(u8"麦克风已关闭");
     }
     // =============== 之后的逻辑 ===============
@@ -450,6 +476,11 @@ void shared_screen::on_btnShareScreenClicked()
 {
     isScreenSharing = !isScreenSharing;
     btnShareScreen->setChecked(isScreenSharing);
+    
+    // 这台机器作为caller
+    m_isCaller = true;
+    m_pcm = new PeerConnectionManager(m_signaling, m_isCaller, this);
+    m_pcm->start();
 
     if (isScreenSharing)
     {
@@ -1095,9 +1126,11 @@ void shared_screen::updateRecordingTime()
     ui->statusLabel->setText(u8"● 正在录制 " + timeStr);
 }
 
-// 点击举手按钮
+// 点击举手按钮，来测试p2p连接
 void shared_screen::on_btnRaiseHandClicked()
-{
+{   
+
+
     isHandRaised = !isHandRaised;
     if (isHandRaised)
     {
@@ -1126,6 +1159,7 @@ void shared_screen::on_btnLeaveClicked()
         ui->stackedWidget->setCurrentIndex(0);
         ui->statusLabel->setText("状态:未连接");
     }
+    m_signaling-> disconnectFromServer();
     close();
 }
 
@@ -1237,7 +1271,7 @@ void shared_screen::appendRemoteMessage(const QString &sender, const QString &te
 
 void shared_screen::updateChatBadge()
 {
-    btnChat->setIcon(QIcon("../icons/message.png"));
+    btnChat->setIcon(QIcon("../../src/icons/message.png"));
     if (unreadCount > 0)
     {
         btnChat->setText(QString::fromUtf8("(%1)").arg(unreadCount));
