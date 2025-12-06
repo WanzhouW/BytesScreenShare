@@ -20,13 +20,29 @@
 #include <QtMultimedia/QMediaRecorder>
 #include <QtMultimedia/QAudioInput>
 #include <QtMultimediaWidgets/QVideoWidget>
+#include <QJsonDocument>
+#include <QtWidgets>
+#include <QWebSocket>
+#include <rtc/rtc.hpp> 
 
+#include <string>
+#include <memory>
+
+using namespace std;
 QT_BEGIN_NAMESPACE
 namespace Ui
 {
     class shared_screen;
 }
 QT_END_NAMESPACE
+
+// --- 信令类型定义 ---
+const QString TYPE_REGISTER_REQ = "REGISTER_REQUEST";
+const QString TYPE_REGISTER_SUC = "REGISTER_SUCCESS";
+const QString TYPE_OFFER = "OFFER";
+const QString TYPE_ANSWER = "ANSWER";
+const QString TYPE_ICE = "ICE";
+const QString TYPE_PEER_JOINED = "PEER_JOINED";
 
 class WsSignalingClient;
 class PeerConnectionManager;
@@ -96,8 +112,30 @@ private:
     void stopRecording();
     void saveRecordedFile();
 
+    void setupSignaling();
+    void connectSignaling(const QString& host, quint16 port);
+    void handleOffer(const QJsonObject& json);
+    void handleRegisterSuccess(const QJsonObject& json);
+    void onMessage(const QString& message);
+    void handleIce(const QJsonObject& json);
+    void handleAnswer(const QJsonObject& json);
+    void createPeerConnection(const QString& targetId);
+    void sendJson(const QJsonObject& json);
+    void onConnected();
+    void setupDataChannel(shared_ptr<rtc::DataChannel> channel);
+    void startP2P();
+    void log(const QString& msg);
     QString iconBasePath;
+    
+    // --- 核心成员 ---
+    QWebSocket* ws;
+    QString myId;
+    bool isConnected = false;
+    QString targetId = "";
 
+    // LibDataChannel 智能指针
+    shared_ptr<rtc::PeerConnection> pc;
+    shared_ptr<rtc::DataChannel> dc;
 private:
     Ui::shared_screen *ui;
 
