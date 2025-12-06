@@ -1,0 +1,26 @@
+# 构建目录
+build/
+dist/
+out/
+bin/
+target/
+*.exe
+*.dll
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 日志
+*.log
+logs/
+
+# 环境配置
+.env
+.env.local
