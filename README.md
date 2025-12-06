@@ -27,7 +27,7 @@ BBYTESSCREENSHARE/
 │   │   ├── shared_screen.h
 │   │   └── shared_screen.ui
 │   └── main.cpp
-├── third_party/
+├── third_party/ 这个第三方库应该有错误
 ├── CMakeLists.txt
 └── README.md
 
