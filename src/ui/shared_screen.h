@@ -1,6 +1,6 @@
 #pragma once
 // ===============================
-// 共享屏幕示例主窗口
+// 共享屏幕示例主窗口（仿腾讯会议布局）
 // 功能：
 //  - 语音开关、屏幕共享
 //  - 聊天面板（支持收/发、未读提醒）
@@ -10,6 +10,7 @@
 // 说明：集成了真实的音视频录制功能，使用 QMediaRecorder
 // ===============================
 #include <QMainWindow>
+#include <QPushButton>
 #include <QPointer>
 #include <QLabel>
 #include <QTime>
@@ -19,7 +20,15 @@
 #include <QtMultimedia/QMediaRecorder>
 #include <QtMultimedia/QAudioInput>
 #include <QtMultimediaWidgets/QVideoWidget>
+#include <QJsonDocument>
+#include <QtWidgets>
+#include <QWebSocket>
+#include <rtc/rtc.hpp> 
 
+#include <string>
+#include <memory>
+
+using namespace std;
 QT_BEGIN_NAMESPACE
 namespace Ui
 {
@@ -27,6 +36,16 @@ namespace Ui
 }
 QT_END_NAMESPACE
 
+// --- 信令类型定义 ---
+const QString TYPE_REGISTER_REQ = "REGISTER_REQUEST";
+const QString TYPE_REGISTER_SUC = "REGISTER_SUCCESS";
+const QString TYPE_OFFER = "OFFER";
+const QString TYPE_ANSWER = "ANSWER";
+const QString TYPE_ICE = "ICE";
+const QString TYPE_PEER_JOINED = "PEER_JOINED";
+
+class WsSignalingClient;
+class PeerConnectionManager;
 class QDockWidget;
 class QListWidget;
 class QPushButton;
@@ -74,6 +93,10 @@ private slots:
     void updateRecordingTime();
     void captureScreen();
 
+    // 连接相关槽函数
+    void onSignalingConnected();
+    void onSignalingDisconnected();
+
 private:
     // ===== 帮助函数 =====
     void toggleChatPanel();
@@ -89,11 +112,38 @@ private:
     void stopRecording();
     void saveRecordedFile();
 
+    void setupSignaling();
+    void connectSignaling(const QString& host, quint16 port);
+    void handleOffer(const QJsonObject& json);
+    void handleRegisterSuccess(const QJsonObject& json);
+    void onMessage(const QString& message);
+    void handleIce(const QJsonObject& json);
+    void handleAnswer(const QJsonObject& json);
+    void createPeerConnection(const QString& targetId);
+    void sendJson(const QJsonObject& json);
+    void onConnected();
+    void setupDataChannel(shared_ptr<rtc::DataChannel> channel);
+    void startP2P();
+    void log(const QString& msg);
     QString iconBasePath;
+    
+    // --- 核心成员 ---
+    QWebSocket* ws;
+    QString myId;
+    bool isConnected = false;
+    QString targetId = "";
 
+    // LibDataChannel 智能指针
+    shared_ptr<rtc::PeerConnection> pc;
+    shared_ptr<rtc::DataChannel> dc;
 private:
     Ui::shared_screen *ui;
 
+    // ===== 新增：P2P 相关 =====
+    WsSignalingClient* m_signaling = nullptr;
+    PeerConnectionManager* m_pcm = nullptr;
+    bool m_isCaller = false;   // 先简单固定：一端 true，一端 false
+    
     // 状态管理
     bool isChatVisible{false};
     bool isVoiceOn{false};
