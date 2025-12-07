@@ -1,32 +1,5 @@
 #include "shared_screen.h"
 #include <ui_shared_screen.h>
-#include <QDateTime>
-#include <QDockWidget>
-#include <QHBoxLayout>
-#include <QIcon>
-#include <QLabel>
-#include <QListWidget>
-#include <QMenu>
-#include <QMessageBox>
-#include <QPushButton>
-#include <QRandomGenerator>
-#include <QShortcut>
-#include <QTextBrowser>
-#include <QTimer>
-#include <QVBoxLayout>
-#include <QKeyEvent>
-#include <QDebug>
-#include <QCoreApplication>
-#include <QPluginLoader>
-#include <QDir>
-#include <QAudioDevice>
-#include <QMediaFormat>
-#include <QStandardPaths>
-#include <QFileDialog>
-#include <QProcess>
-
-#include "../signaling/WsSignalingClient.hpp"
-#include "../rtc/PeerConnectionManager.hpp"
 
 // 添加诊断函数
 void shared_screen::log(const QString& msg) {
@@ -162,6 +135,8 @@ void shared_screen::diagnoseMultimediaSupport()
 shared_screen::shared_screen(QWidget *parent)
     : QMainWindow(parent),
       ui(new Ui::shared_screen)
+    , pcMgr(new PeerConnectionManager(this))
+    , isConnected(false)
 {
     ui->setupUi(this);
 
@@ -409,271 +384,48 @@ shared_screen::~shared_screen()
 void shared_screen::on_btnJoinMeetingClicked()
 {
     // 房间号
-    QString roomId = ui->editRoomId->text().trimmed();
+    QString url = ui->editRoomId->text().trimmed();
+    auto check = [url]() {
+        QUrl parsedUrl(url);
+        if (!parsedUrl.isValid() || parsedUrl.scheme() != "ws" || parsedUrl.host().isEmpty()) { return false; }
+        return true;
+    };
 
-    if (roomId.isEmpty())
+    if (url.isEmpty())
     {
-        QMessageBox::warning(this, "提示", "请输入会议房间号！");
+        QMessageBox::warning(this, "提示", "请输入信令服务器URL！");
+        return;
+    }
+    else if (!check()) {
+        QMessageBox::warning(nullptr, "无效的URL", "请输入一个有效的WebSocket URL，例如: ws://example.com:1234");
         return;
     }
 
-    qDebug() << "=== Start to connect server ===";
-    setupSignaling();
-    connectSignaling("127.0.0.1", 11290);
-
-}
-
-void shared_screen::sendJson(const QJsonObject& json) {
-    // LibDataChannel 的回调在后台线程，必须使用 invokeMethod 切换到主线程发送 WebSocket
-    QMetaObject::invokeMethod(this, [this, json]() {
-        if (!ws || !ws->isValid()) {
-            qDebug("[Error] WebSocket not connected, cannot send signaling.");
-            return;
-        }
-        QJsonDocument doc(json);
-        QString str = doc.toJson(QJsonDocument::Compact);
-        ws->sendTextMessage(str);
-        // 仅打印关键信令，避免刷屏
-        QString type = json["type"].toString();
-        if (type != TYPE_ICE) qDebug() << "[Sig] >> SEND: " << type;
-
-        }, Qt::QueuedConnection);
-}
-
-void shared_screen::setupSignaling() {
-    ws = new QWebSocket();
-    connect(ws, &QWebSocket::connected, this, &shared_screen::onConnected);
-    connect(ws, &QWebSocket::textMessageReceived, this, &shared_screen::onMessage);
-    connect(ws, &QWebSocket::disconnected, [this]() {
+    DEBUG() << "=== Start to connect server ===";
+    QObject::connect(pcMgr, &PeerConnectionManager::signalingError, [this](const QString& msg) {
         isConnected = false;
-        qDebug() << "信令服务器断开连接";
+        WARNING() << "信令服务器断开连接, 抛出异常：" << msg;
         QMessageBox::warning(this, "提示", "无法连接服务器");
         return;
         });
-}
+    QObject::connect(pcMgr, &PeerConnectionManager::signalingConnected, this, &shared_screen::onConnected);
 
-void shared_screen::connectSignaling(const QString& host, quint16 port) {
-    if (ws->state() == QAbstractSocket::ConnectedState) return;
-    QUrl url;
-    url.setScheme("ws"); // 假设使用非加密的 ws
-    url.setHost(host);
-    url.setPort(port);
-    ws->open(url);
+    pcMgr->onConnectServer(url);
 }
-
 
 void shared_screen::onConnected() {
     isConnected = true;
     qDebug() << "connect success";
-        ui->stackedWidget->setCurrentIndex(1);
-    ui->statusLabel->setText(u8"状态:未连接");
-
-    isVoiceOn = false;
-    isScreenSharing = false;
-    isCameraOn = false;
-    isRecording = false;
-    isHandRaised = false;
-    unreadCount = 0;
-
-    ui->dockChat->hide();
-    if (dockParticipants)
-    {
-        dockParticipants->hide();
-    }
-    btnVoice->setChecked(false);
-    btnShareScreen->setChecked(false);
-    btnVideo->setChecked(false);
-    btnRecord->setChecked(false);
-    btnRaiseHand->setChecked(false);
-    btnChat->setText("");
-    btnVoice->setIcon(QIcon("../../src/icons/voice-off.png"));
-    // =============== 之后的逻辑 ===============
-
-    QJsonObject json;
-
-    json["type"] = TYPE_REGISTER_REQ;
-    json["to"] = "Server";
-    sendJson(json);
-}
-
-void shared_screen::shared_screen::onMessage(const QString& message) {
-    QJsonDocument doc = QJsonDocument::fromJson(message.toUtf8());
-    if (!doc.isObject()) return;
-    QJsonObject json = doc.object();
-    QString type = json["type"].toString();
-
-    if (type == TYPE_REGISTER_SUC) {
-        handleRegisterSuccess(json);
-    }
-    else if (type == TYPE_PEER_JOINED) {
-        QString newId = json["data"].toObject()["id"].toString();
-        if (!newId.isEmpty() && newId != myId) {
-            targetId = newId; //这里只设计了两台设备的连接
-            // peerList->addItem(newId);
-            // qDebug("[Sig] Peer Joined: " + newId);
-        }
-    }
-    else if (type == TYPE_OFFER) {
-        handleOffer(json);
-    }
-    else if (type == TYPE_ANSWER) {
-        handleAnswer(json);
-    }
-    else if (type == TYPE_ICE) {
-        handleIce(json);
-    }
-}
-
-void shared_screen::handleRegisterSuccess(const QJsonObject& json) {
-    QJsonObject data = json["data"].toObject();
-    myId = data["peerId"].toString();
-    // setWindowTitle("Client: " + myId);
-    // log("[Sig] Registered. My ID: " + myId);
-
-    // peerList->clear();
-    QJsonArray peers = data["peers"].toArray();
-    for (auto p : peers) {
-        if (p.toString() != myId)  targetId = p.toString();// 在这里只考虑两台设备的连接
-    }
-
-}
-
-void shared_screen::handleIce(const QJsonObject& json) {
-        QJsonObject data = json["data"].toObject();
-        string cand = data["candidate"].toString().toStdString();
-        string mid = data["sdpMid"].toString().toStdString();
-        // log("[RTC] Adding Remote Candidate...");
-        if (pc) {
-            pc->addRemoteCandidate(rtc::Candidate(cand, mid));
-        }
-    }
-
-void shared_screen::handleOffer(const QJsonObject& json) {
-    QString fromId = json["from"].toString();
-    qDebug()<<"--- Received OFFER from " << fromId << " ---";
-
-    if (!pc) {
-        createPeerConnection(fromId);
-    }
-
-    QString sdp = json["data"].toObject()["sdp"].toString();
-    // 设置远端 Offer，库会自动生成 Answer 并触发 onLocalDescription
-    pc->setRemoteDescription(rtc::Description(sdp.toStdString(), rtc::Description::Type::Offer));
-}
-
-// [主动方] 收到 Answer -> 设置 Remote SDP -> 连接建立
-void shared_screen::handleAnswer(const QJsonObject& json) {
-    qDebug("--- Received ANSWER ---");
-    QString sdp = json["data"].toObject()["sdp"].toString();
-    if (pc) {
-        pc->setRemoteDescription(rtc::Description(sdp.toStdString(), rtc::Description::Type::Answer));
-    }
-}
-
-void shared_screen::createPeerConnection(const QString& targetId) {
-    rtc::Configuration config;
-    config.iceServers.emplace_back("stun:stun.l.google.com:19302"); // 公网 STUN
-    pc = std::make_shared<rtc::PeerConnection>(config);
-
-    // [回调 1] 本地 ICE 候选者生成 -> 发送给对端
-    pc->onLocalCandidate([this, targetId](rtc::Candidate cand) {
-        QJsonObject json;
-        json["type"] = TYPE_ICE;
-        json["from"] = myId;
-        json["to"] = targetId;
-        QJsonObject data;
-        data["candidate"] = QString::fromStdString(cand.candidate());
-        data["sdpMid"] = QString::fromStdString(cand.mid());
-        data["sdpMLineIndex"] = cand.port().value();
-        json["data"] = data;
-        sendJson(json);
-        });
-    // qDebug("send ICE");
-    // [回调 2] 本地 SDP 生成 (Offer 或 Answer) -> 发送给对端
-    // 这里的代码会在后台线程运行，sendJson 内部做了线程切换
-    pc->onLocalDescription([this, targetId](rtc::Description desc) {
-        QString sdpType = (desc.type() == rtc::Description::Type::Offer) ? TYPE_OFFER : TYPE_ANSWER;
-        qDebug() << "[RTC] Local Description Generated: " << sdpType;
-
-        QJsonObject json;
-        json["type"] = sdpType;
-        json["from"] = myId;
-        json["to"] = targetId;
-        QJsonObject data;
-        data["sdp"] = QString::fromStdString(std::string(desc));
-        json["data"] = data;
-
-        sendJson(json);
-        });
-    // qDebug("send SDP");
-    // [回调 3] DataChannel 状态变化 (被动接收方)
-    pc->onDataChannel([this](shared_ptr<rtc::DataChannel> channel) {
-        qDebug() << "[RTC] Received Remote DataChannel: " << QString::fromStdString(channel->label());
-        setupDataChannel(channel);
-        });
-
-    // [回调 4] 连接状态监控
-    pc->onStateChange([this](rtc::PeerConnection::State state) {
-        qDebug() << "[RTC] State Changed: " << QString::number((int)state);
-        });
-}
-
-// 绑定 DataChannel 事件，报错在这个函数
-void shared_screen::setupDataChannel(shared_ptr<rtc::DataChannel> channel) {
-    dc = channel;
-    // QPointer<shared_screen> self(this);
-    // // 必须切换回主线程更新 UI，这里已经不需要更新按钮了
-    // QMetaObject::invokeMethod(this, [this]() {
-    //     btnRaiseHand->setEnabled(true);
-    //     // ui->statusLabel->setText(u8"DataChannel已连接，可以发送消息");
-    //     });  //, Qt::QueuedConnection);
-
-
-    dc->onOpen([this]() {
-        log("[DataChannel] State: OPEN");
-        dc->send("Hello from " + myId.toStdString());
-        });
-
-    dc->onMessage([this](variant<rtc::binary, string> message) {
-        if (holds_alternative<string>(message)) {
-            // qDebug() << "[DataChannel] << RECV: " << QString::fromStdString(get<string>(message));
-            log("[DataChannel] << RECV: " + QString::fromStdString(get<string>(message)));
-        }
-        });
-}
-
-void shared_screen::startP2P() {
-    // QString targetId = peerList->currentText(); // targetId已经在前面确认了
-    if (targetId.isEmpty()) {
-        qDebug("[Error] No target selected.");
-        return;
-    }
-
-    qDebug() << "--- my Id is:" << myId << "---";
-    qDebug() << "--- Starting P2P Handshake with" << targetId << "---";
-
-    // 1. 创建 PeerConnection
-    createPeerConnection(targetId);
-
-    // 2. [关键] 主动创建 DataChannel。
-    // 在 libdatachannel 中，创建 Track 或 DataChannel 会自动触发 'negotiationneeded'，
-    // 进而生成 Offer 并回调 onLocalDescription。
-    auto channel = pc->createDataChannel("chat");
-    qDebug("[RTC] Created Local DataChannel 'chat'");
-
-    setupDataChannel(channel);
-}
-
-void shared_screen::onSignalingConnected() //没用到
-{
     ui->stackedWidget->setCurrentIndex(1);
     ui->statusLabel->setText(u8"状态:未连接");
+
     isVoiceOn = false;
     isScreenSharing = false;
     isCameraOn = false;
     isRecording = false;
     isHandRaised = false;
     unreadCount = 0;
+
     ui->dockChat->hide();
     if (dockParticipants)
     {
@@ -686,14 +438,6 @@ void shared_screen::onSignalingConnected() //没用到
     btnRaiseHand->setChecked(false);
     btnChat->setText("");
     btnVoice->setIcon(QIcon("../../src/icons/voice-off.png"));
-    // =============== 之后的逻辑 ===============
-}
-
-void shared_screen::onSignalingDisconnected() //没用到
-{
-    qDebug() << "信令服务器断开连接";
-    QMessageBox::warning(this, "提示", "无法连接服务器");
-    return;
 }
 
 // 语音按钮
@@ -711,24 +455,18 @@ void shared_screen::on_btnVoiceClicked()
         btnVoice->setIcon(QIcon("../../src/icons/voice-off.png"));
         ui->statusLabel->setText(u8"麦克风已关闭");
     }
-    // =============== 之后的逻辑 ===============
 }
 
 // 共享屏幕按钮，点击建立p2p
 void shared_screen::on_btnShareScreenClicked()
 {
-    startP2P();
-
-    // 这段是sendmessage功能
-    if (dc && dc->isOpen()) {
-                QString txt = "Hello from " + myId + " at " + QTime::currentTime().toString();
-                dc->send(txt.toStdString());
-                log("[DataChannel] >> Sent: " + txt);
-            }
-            else {
-                log("[Error] DataChannel not open.");
-            }
-
+    // startP2P();
+    QString targetId = pcMgr->target();
+    if (targetId.isEmpty()) {
+        QMessageBox::warning(this, "提示", "无其他在线用户");
+        return;
+    }
+    pcMgr->start(targetId);
 
     isScreenSharing = !isScreenSharing;
     btnShareScreen->setChecked(isScreenSharing);

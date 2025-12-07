@@ -33,6 +33,12 @@ void WsSignalingClient::connectToServer(const QString& host, quint16 port) {
     m_socket.open(url); // QWebSocket 使用 open()
 }
 
+void WsSignalingClient::connectToServer(const QString& url)
+{
+    qDebug() << "Attempting to open WebSocket to:" << url;
+    m_socket.open(url);
+}
+
 void WsSignalingClient::sendJson(const QJsonObject& obj) {
     QJsonDocument doc(obj);
     // QWebSocket 发送文本消息 (QString)
