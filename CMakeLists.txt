@@ -2,16 +2,43 @@ cmake_minimum_required(VERSION 3.16) # CMake install : https://cmake.org/downloa
 project(shared_screen LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_PREFIX_PATH "d:/Qt/6.8.3/msvc2022_64") # Qt Kit Dir
+set(CMAKE_PREFIX_PATH "D:/cs_techs/Qt/6.8.3/msvc2022_64") # Qt Kit Dir
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 17 ON)
+set(FFMPEG_ROOT "D:/cs_techs/ffmpeg-8.0.1-full_build-shared")# ffmpeg 安装路径
+set(srcs
+    src/main.cpp
+    src/Capture/ScreenCaptureService.cpp
+    src/Capture/ScreenCaptureService.h
+    src/encoder/VideoEncoder.cpp
+    src/encoder/VideoEncoder.h
+    src/network/RtcRtpSender.cpp
+    src/network/RtcRtpSender.h#  其他文件
+)
 
 # 兼容 Qt6 / Qt5 的查找写法
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia MultimediaWidgets)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core Gui Widgets Multimedia MultimediaWidgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Widgets Multimedia MultimediaWidgets)
+
+include_directories(${FFMPEG_ROOT}/include)# ffmpeg 头文件路径
+link_directories(${FFMPEG_ROOT}/lib)
+
+# 3. 集成 libdatachannel (找回丢失的配置)
+set(LIBDATACHANNEL_PATH "D:/cs_techs/libdatachannel/libdatachannel")
+
+# 防止重复添加
+if(NOT TARGET datachannel)
+    # 静态编译设置
+    set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+    set(NO_TESTS ON CACHE BOOL "" FORCE)
+    set(NO_EXAMPLES ON CACHE BOOL "" FORCE)
+    
+    add_subdirectory("${LIBDATACHANNEL_PATH}" "libdatachannel_build")
+endif()
+# ==========================================
+find_package(OpenSSL REQUIRED)
 
 aux_source_directory(./src srcs)
 
@@ -24,11 +51,26 @@ add_executable(${PROJECT_NAME}
     ${srcs}
 )
 
+target_include_directories(${PROJECT_NAME} PRIVATE 
+    ${CMAKE_SOURCE_DIR}/src
+    ${CMAKE_SOURCE_DIR}/src/Capture
+    ${CMAKE_SOURCE_DIR}/src/encoder
+)
+
 target_link_libraries(${PROJECT_NAME}
     PRIVATE
+        Qt${QT_VERSION_MAJOR}::Core
+        Qt${QT_VERSION_MAJOR}::Gui
         Qt${QT_VERSION_MAJOR}::Widgets
         Qt${QT_VERSION_MAJOR}::Multimedia
         Qt${QT_VERSION_MAJOR}::MultimediaWidgets
+        Qt${QT_VERSION_MAJOR}::Network
+    datachannel OpenSSL::SSL OpenSSL::Crypto
+    # FFmpeg 库 (Windows 下的文件名通常如下)
+        avcodec
+        avformat
+        avutil
+        swscale
 )
 
 # # ========================================
