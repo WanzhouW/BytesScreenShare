@@ -120,6 +120,9 @@ private slots:
     void updateRecordingTime();
     void captureScreen();
 
+    void updateList(const QJsonArray& list);
+    void onJoined(const QString& id);
+
 private:
     // ===== 帮助函数 =====
     void toggleChatPanel();

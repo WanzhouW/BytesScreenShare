@@ -409,6 +409,8 @@ void shared_screen::on_btnJoinMeetingClicked()
         return;
         });
     QObject::connect(pcMgr, &PeerConnectionManager::signalingConnected, this, &shared_screen::onConnected);
+    QObject::connect(pcMgr, &PeerConnectionManager::peersList, this, &shared_screen::updateList);
+    QObject::connect(pcMgr, &PeerConnectionManager::peerJoined, this, &shared_screen::onJoined);
 
     pcMgr->onConnectServer(url);
 }
@@ -1074,6 +1076,19 @@ void shared_screen::onRecorderError(QMediaRecorder::Error error, const QString &
 // 屏幕捕获
 void shared_screen::captureScreen()
 {
+}
+void shared_screen::updateList(const QJsonArray& list)
+{
+    ensureParticipantsDock();
+    participantsList->clear();
+    for (auto it = list.begin(); it != list.end(); it++) {
+        participantsList->addItem((*it).toString());
+    }
+}
+void shared_screen::onJoined(const QString& id)
+{
+    ensureParticipantsDock();
+    participantsList->addItem(id);
 }
 // 录制时长更新
 void shared_screen::onRecordingDurationChanged(qint64 duration)

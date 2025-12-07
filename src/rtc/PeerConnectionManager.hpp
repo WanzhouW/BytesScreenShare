@@ -23,7 +23,8 @@ signals:
     void signalingConnected();
     void signalingError(const QString& msg);
     void peerJoined(const QString& peerId);
-    void p2pConnected();     // 视频通道已建立，可以开始发送数据
+    void peersList(const QJsonArray& list);
+    void p2pConnected();     // datachannel has established
     void p2pDisconnected();
     void encodedFrameReceived(QByteArray data);
 

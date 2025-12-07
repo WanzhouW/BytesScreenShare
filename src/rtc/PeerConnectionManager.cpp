@@ -117,6 +117,7 @@ void PeerConnectionManager::handleSignalingMessage(const QJsonObject& json)
         if (type == SignalingType::REGISTER_SUCCESS) {
             m_myId = data["peerId"].toString();
             qDebug() << "My ID:" << m_myId;
+            emit peersList(data["peers"].toArray());
         }
         else if (type == SignalingType::PEER_JOINED) {
             emit peerJoined(data["id"].toString());
