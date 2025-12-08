@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RCC>
+  <qresource prefix="/icons">
+    <file>message.png</file>
+    <file>voice-off.png</file>
+    <file>message.png</file>
+    <file>participants.png</file>
+    <file>facetime.png</file>
+    <file>palm.png</file>
+    <file>phone-off.png</file>
+    <file>voice.png</file>
+    <file>camera-one.png</file>
+    <file>monitor-one.png</file>
+  </qresource>
+</RCC>

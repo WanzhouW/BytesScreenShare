@@ -220,7 +220,7 @@ QPushButton#btnSend:pressed {
                 <item>
                 <widget class="QLineEdit" name="editRoomId">
                     <property name="placeholderText">
-                    <string>请输入房间号</string>
+                    <string>ws://127.0.0.1:11290</string>
                     </property>
                     <property name="minimumWidth">
                     <number>200</number>

@@ -51,11 +51,14 @@ set(UIS
 
 qt_wrap_ui(UI_HEADERS ${UIS})
 
+qt_add_resources(RESOURCES src/icons/icons.qrc)
+
 add_executable(${PROJECT_NAME}
     WIN32
     ${SRCS}
     ${HEADERS}
     ${UI_HEADERS}
+    ${RESOURCES}
 )
 
 target_link_libraries(${PROJECT_NAME}

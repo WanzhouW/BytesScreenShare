@@ -11,6 +11,7 @@ public:
 
     // 更改连接函数，使其接受 URL 或 host/port
     void connectToServer(const QString& host, quint16 port); 
+    void connectToServer(const QString& url);
     void disconnectFromServer(); 
     void sendJson(const QJsonObject& obj);
 
