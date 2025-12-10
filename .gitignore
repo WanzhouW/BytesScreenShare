@@ -1,3 +1,16 @@
+# Visual Studio 缓存文件 (必须忽略！)
+.vs/
+.vscode/
+*.ipch
+*.db
+*.suo
+*.user
+
+# Qt 临时文件
+x64/
+Debug/
+Release/
+
 # Build output
 build/
 

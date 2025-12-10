@@ -17,7 +17,7 @@ if(NOT DEFINED CMAKE_PREFIX_PATH)
     if(DEFINED ENV{QT_PATH})
         list(APPEND CMAKE_PREFIX_PATH "$ENV{QT_PATH}")
     else()
-        list(APPEND CMAKE_PREFIX_PATH "H:/qt6/6.8.3/msvc2022_64")
+        list(APPEND CMAKE_PREFIX_PATH "D:\\cs_techs\\Qt\\6.8.3\\msvc2022_64")
     endif()
 endif()
 
@@ -29,7 +29,7 @@ add_compile_options(
     "$<$<CXX_COMPILER_ID:MSVC>:/utf-8>"
     "$<$<CXX_COMPILER_ID:MSVC>:/Zc:__cplusplus>"
     "$<$<CXX_COMPILER_ID:MSVC>:/permissive->"
-    "$<$<CXX_COMPILER_ID:MSVC>:/std:c++17>"
+   # "$<$<CXX_COMPILER_ID:MSVC>:/std:c++17>"
 )
 
 set(SRCS
@@ -75,24 +75,38 @@ target_link_libraries(${PROJECT_NAME}
         Qt${QT_VERSION_MAJOR}::Network
 )
 
-# --------------------------------------
-# libdatachannel (rtc) 依赖
-# --------------------------------------
-set(RTC_ROOT "./third_part/libdatachannel" CACHE PATH "libdatachannel install 根目录")
-get_filename_component(RTC_ROOT_ABS "${RTC_ROOT}" ABSOLUTE)
-message(STATUS "libdatachannel RTC_ROOT_ABS=${RTC_ROOT_ABS}")
+set(THIRD_PART_ROOT "${CMAKE_SOURCE_DIR}/third_part") # 注意拼写 third_part
+# ============================================================
+# LibDataChannel 源码集成 (自动适配 Debug/Release)
+# ============================================================
 
-list(APPEND CMAKE_PREFIX_PATH "${RTC_ROOT_ABS}")
-message(STATUS "加入 CMAKE_PREFIX_PATH: ${RTC_ROOT_ABS}")
+# 1. 告诉它 OpenSSL 在哪 (路径换成你自己的安装路径)
+set(OPENSSL_ROOT_DIR "C:/Program Files/OpenSSL-Win64") 
 
-find_package(LibDataChannel CONFIG REQUIRED PATHS "${RTC_ROOT_ABS}" NO_DEFAULT_PATH)
+# 2. 关闭不必要的编译选项
+set(NO_EXAMPLES ON CACHE BOOL "" FORCE)
+set(NO_TESTS ON CACHE BOOL "" FORCE)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE LibDataChannel::LibDataChannel)
+# 3. 加入子项目 (这一步会自动编译出 Debug 版的库！)
+add_subdirectory("${CMAKE_SOURCE_DIR}/third_part/libdatachannel")
 
+# 4. 链接到目标 (注意：名字叫 datachannel)
+# 这里 CMake 会自动处理 .lib 路径，不用你操心
+target_link_libraries(${PROJECT_NAME} PRIVATE datachannel)
+
+# 5. OpenSSL 的 DLL 还是要复制的 (因为它们是外部的)
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${OPENSSL_ROOT_DIR}/bin/libcrypto-3-x64.dll"
+        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        "${OPENSSL_ROOT_DIR}/bin/libssl-3-x64.dll"
+        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/"
+)
 # --------------------------------------
 # FFmpeg 依赖
 # --------------------------------------
-set(FFMPEG_ROOT "./third_part/ffmpeg" CACHE PATH "FFmpeg 安装根目录")
+set(FFMPEG_ROOT "${CMAKE_SOURCE_DIR}/third_part/ffmpeg" CACHE PATH "FFmpeg 安装根目录")
 get_filename_component(FFMPEG_ROOT_ABS "${FFMPEG_ROOT}" ABSOLUTE)
 message(STATUS "FFmpeg FFMPEG_ROOT_ABS=${FFMPEG_ROOT_ABS}")
 
@@ -117,13 +131,14 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     ${SWSCALE_LIBRARY}
 )
 
-# 运行时 DLL（已手动确认名称），统一复制到可执行目录（无检查）
+# =======================================================
+# 智能复制编译出来的 libdatachannel DLL 到 exe 旁边
+# =======================================================
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:${PROJECT_NAME}>"
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${RTC_ROOT_ABS}/bin/datachannel.dll"
-        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/"
-    COMMENT "复制 libdatachannel 运行时 DLL 到输出目录"
+        $<TARGET_FILE:datachannel>            # <--- 自动查找刚编译好的 DLL 路径
+        $<TARGET_FILE_DIR:${PROJECT_NAME}>/   # <--- 你的 exe 所在的路径
+    COMMENT "正在复制源码编译生成的 datachannel.dll ..."
 )
 
 # FFmpeg DLL 复制

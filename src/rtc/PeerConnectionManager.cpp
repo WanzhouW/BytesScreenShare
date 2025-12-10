@@ -209,7 +209,27 @@ void PeerConnectionManager::onConnectServer(const QString& url)
         });
 
     QObject::connect(this, &PeerConnectionManager::peerJoined, this, &PeerConnectionManager::onJoined);
-    m_ws->open(url.toStdString());
+    // m_ws->open(url.toStdString());
+
+    // 在调用 open 的地方
+    try {
+        std::string targetUrl = url.toStdString();
+        // 或者 targetUrl = url.toStdString();
+
+        qDebug() << "Attempting to connect to:" << QString::fromStdString(targetUrl);
+
+        m_ws->open(targetUrl);
+    }
+    catch (const std::invalid_argument& e) {
+        // 【关键】看看这里打印了什么！
+        qDebug() << "CRITICAL ERROR (Invalid Argument):" << e.what();
+    }
+    catch (const std::exception& e) {
+        qDebug() << "CRITICAL ERROR (Exception):" << e.what();
+    }
+    catch (...) {
+        qDebug() << "CRITICAL ERROR: Unknown exception occurred.";
+    }
 }
 
 void PeerConnectionManager::onSignalingMessage(const QJsonObject& obj)
