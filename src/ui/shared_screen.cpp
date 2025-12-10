@@ -326,6 +326,24 @@ shared_screen::shared_screen(QWidget *parent)
     ui->dockChat->setFloating(true);
     ui->dockChat->setAllowedAreas(Qt::NoDockWidgetArea);
     ui->dockChat->hide();
+
+    
+    ui->screenPreview->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    ui->screenPreview->setMinimumSize(640,480);
+    ui->screenPreview->setAlignment(Qt::AlignCenter);
+
+    QVBoxLayout* innerLayout = new QVBoxLayout(ui->screenPreview);
+    innerLayout->setContentsMargins(0,0,0,0);
+
+    m_glScreenWidget = new VideoOpenGLWidget(ui->screenPreview);
+    m_glScreenWidget->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    m_glScreenWidget->hide();
+    innerLayout->addWidget(m_glScreenWidget);
+
+    streamReceiver = new StreamReceiver(this);
+    connect(pcMgr,&PeerConnectionManager::encodedFrameReceived,streamReceiver,&StreamReceiver::processEncodedData);
+    connect(streamReceiver,&StreamReceiver::frameReady,this,&shared_screen::onFrameReceived,Qt::DirectConnection);
+    connect(streamReceiver, &StreamReceiver::stateChange, this, &shared_screen::onStreamReceiverStateChanges);
 }
 
 shared_screen::~shared_screen()
@@ -379,6 +397,10 @@ shared_screen::~shared_screen()
     {
         delete audioInput;
         audioInput = nullptr;
+    }
+
+    if (streamReceiver) {
+        streamReceiver->stop();
     }
     // if(m_signaling) m_signaling-> disconnectFromServer();
     delete ui;
@@ -467,37 +489,53 @@ void shared_screen::on_btnVoiceClicked()
 // 共享屏幕按钮，点击建立p2p
 void shared_screen::on_btnShareScreenClicked()
 {
+    // 1. 切换状态
+    isScreenSharing = !isScreenSharing;
+    btnShareScreen->setChecked(isScreenSharing);
 
-    if(!isScreenSharing){
-        // startP2P();
+    if (isScreenSharing) {
+        // === 开始共享 ===
+
+        // 启动 P2P 连接（如果还没连接）
         QString targetId = pcMgr->target();
         if (targetId.isEmpty()) {
             QMessageBox::warning(this, "提示", "无其他在线用户");
+            // 回滚状态
+            isScreenSharing = false;
+            btnShareScreen->setChecked(false);
             return;
         }
+
+        // 启动信令/P2P流程
         pcMgr->start(targetId);
+
+        // 更新UI提示（发送端只显示状态，不显示OpenGL窗口）
+        ui->statusLabel->setText(u8"正在共享屏幕...");
+        ui->screenPreview->setText(u8"正在共享屏幕\n(接收端将看到您的画面)");
+        ui->screenPreview->show();
+
+        // 确保发送端不显示 OpenGL 窗口
+        if (m_glScreenWidget) {
+            m_glScreenWidget->hide();
+        }
     }
-    else{
+    else {
+
+        // 停止采集和发送
         CaptureService->stopCapture();
         pcMgr->stop();
-    }
-    // CaptureService->startCapture();
 
-
-    isScreenSharing = !isScreenSharing;
-    btnShareScreen->setChecked(isScreenSharing);
-    
-    if (isScreenSharing)
-    {
-        ui->screenPreview->setText(u8"正在共享屏幕...");
-        ui->statusLabel->setText(u8"正在共享屏幕");
-    }
-    else
-    {
-        ui->screenPreview->setText(u8"屏幕预览区域\n点击共享屏幕开始");
+        // 更新UI
         ui->statusLabel->setText(u8"未共享");
+        ui->screenPreview->setText(u8"屏幕预览区域\n点击共享屏幕开始");
+        ui->screenPreview->show();
+
+        if (m_glScreenWidget) {
+            m_glScreenWidget->hide();
+        }
     }
     // =============== 之后的逻辑 ===============
+
 }
 
 // 聊天按钮
@@ -1337,6 +1375,79 @@ void shared_screen::keyPressEvent(QKeyEvent *event)
         }
     }
     QMainWindow::keyPressEvent(event);
+}
+
+
+//用于渲染和显示视频的槽函数
+void shared_screen::onFrameReceived(const uchar* y, const uchar* u, const uchar* v,
+    int yStride, int uStride, int vStride,
+    int width, int height) {
+    // 1. 线程安全检查
+    if (QThread::currentThread() != this->thread()) {
+        QMetaObject::invokeMethod(this, [=]() {
+            onFrameReceived(y, u, v, yStride, uStride, vStride, width, height);
+            }, Qt::QueuedConnection);
+        return;
+    }
+
+    // 2. 检查 OpenGL 窗口
+    if (!m_glScreenWidget) return;
+
+    // 3. 【关键修改】自动显示 OpenGL 窗口
+    // 只要收到帧，就说明正在接收共享，强制显示 OpenGL 窗口
+    if (m_glScreenWidget->isHidden()) {
+        qDebug() << "Detected incoming video stream, showing OpenGL widget";
+        m_glScreenWidget->show();       // 显示渲染窗口
+        m_glScreenWidget->raise();      // 确保在最上层
+
+        // 可以在这里更新接收端的状态文字
+        ui->statusLabel->setText(u8"正在观看共享屏幕");
+
+        // 注意：接收端的 isScreenSharing 标志位不需要设为 true，
+        // 因为 isScreenSharing 通常表示"我是否在分享"。
+        // 如果你需要区分，可以加一个 isViewingShare 标志。
+    }
+
+    // 4. 渲染
+    m_glScreenWidget->onFrameDecoded(y, u, v, yStride, uStride, vStride, width, height);
+
+    // 5. 更新调试信息
+    static int frameCount = 0;
+    frameCount++;
+    if (frameCount % 30 == 0) {
+        // 只有接收端才需要看到这个详细信息
+        ui->statusLabel->setText(QString("接收画面 (%1x%2) 帧数:%3").arg(width).arg(height).arg(frameCount));
+    }
+}
+
+void shared_screen::onStreamReceiverStateChanges(const QString& state) {
+
+    qDebug() << "StreamReceiver state changed to:" << state;
+    if (state == "Connected") {
+        ui->statusLabel->setText("Receiving Video Data");
+        // 切换 UI：隐藏预览 Label，显示 OpenGL 窗口
+        if (m_glScreenWidget && m_glScreenWidget->isHidden()) {
+            m_glScreenWidget->show();
+        }
+    }
+    else if (state == "error") {
+        ui->statusLabel->setText("Receive Stream Error");
+        QMessageBox::warning(this,"Wrong", "Receive Stream Error");
+
+        //错误时隐藏OpenGL，显示为默认界面、
+        if (m_glScreenWidget) {
+            m_glScreenWidget->hide();
+        }
+        ui->screenPreview->setText("视频流接受错误\n请重新尝试连接");
+    }
+    else if (state == "stopped"||state=="disconnected") {
+        ui->statusLabel->setText("视频流已停止");
+        //停止时恢复默认界面
+        if (m_glScreenWidget) {
+            m_glScreenWidget->hide();
+        }
+        ui->screenPreview->setText("屏幕预览区域\n点击共享屏幕开始");
+    }
 }
 
 void shared_screen::keyReleaseEvent(QKeyEvent *event)

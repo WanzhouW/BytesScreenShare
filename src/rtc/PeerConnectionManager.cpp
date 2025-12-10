@@ -110,13 +110,14 @@ void PeerConnectionManager::bindDataChannel(std::shared_ptr<rtc::DataChannel> dc
         if (std::holds_alternative<rtc::binary>(data)) {
             auto& binData = std::get<rtc::binary>(data);
 
-            QByteArray qData(reinterpret_cast<const char*>(binData.data()), binData.size());
+            processReceivedRtpPacket(binData);
+            //QByteArray qData(reinterpret_cast<const char*>(binData.data()), binData.size());
 
-            qDebug() << "received qData:" << qData.toHex(' ');
+            //qDebug() << "received qData:" << qData.toHex(' ');
 
-            // QMetaObject::invokeMethod(this, [this, qData]() {
-            //     emit encodedFrameReceived(qData);
-            //     });
+            //// QMetaObject::invokeMethod(this, [this, qData]() {
+            ////     emit encodedFrameReceived(qData);
+            ////     });
         }
         });
 }
@@ -265,7 +266,7 @@ void PeerConnectionManager::sendEncodedFrame(const QByteArray& encodedData, uint
 {
     // 1. 通道检查
     if (m_videoChannel && m_videoChannel->isOpen()) {
-
+        currentTimestamp_ = timestamp;
         // 2. 准备原始数据
         const uint8_t* nalData = reinterpret_cast<const uint8_t*>(encodedData.constData());
         size_t totalSize = encodedData.size();
@@ -274,9 +275,6 @@ void PeerConnectionManager::sendEncodedFrame(const QByteArray& encodedData, uint
         // H.264 头信息
         uint8_t nalHeader = nalData[0];
         uint8_t nalType = nalHeader & 0x1F;
-
-        // 【更新】------------------------
-        // RTP 切片逻辑
 
         //  情况 A: NALU单个包小，可以直接传 
         if (totalSize <= MAX_RTP_PAYLOAD_SIZE) {
@@ -305,21 +303,17 @@ void PeerConnectionManager::sendEncodedFrame(const QByteArray& encodedData, uint
             // Copy Payload
             std::memcpy(header + 12, nalData, totalSize);
 
-            // 1. 转成 QByteArray (为了方便打印)
-            QByteArray debugHex(reinterpret_cast<const char*>(packet.data()), packet.size());
-
-            // 2. 打印日志 (Type, Size, Hex)     
-            qDebug() << "original binData :" << debugHex.toHex(' ');
-            qDebug("video data send!");
+           
 
             // 【发送】
             try {
-                m_videoChannel->send(packet);
+                m_videoChannel->send(packet); qDebug() << "Single NALU sent: size=" 
+                    << totalSize << "seq=" << (m_sequenceNumber - 1) << "ts=" << currentTimestamp_;       
             }
             catch (...) {
                 qDebug() << "Send frame failed. Channel might be busy or closed.";
             }
-
+            //emit encodedFrameReceived(debugHex);
             return;
         }
 
@@ -377,9 +371,10 @@ void PeerConnectionManager::sendEncodedFrame(const QByteArray& encodedData, uint
             // 【发送】
             try {
                 m_videoChannel->send(packet);
+                qDebug() << "FU-A fragment sent: seq=" << (m_sequenceNumber - 1) << "start=" << isFirst << "end=" << isLast << "size=" << chunkSize;
             }
             catch (...) {
-                qDebug() << "Send frame failed. Channel might be busy or closed.";
+                qDebug() << "Send fragment failed. Channel might be busy or closed.";
             }
 
             offset += chunkSize;
@@ -391,8 +386,123 @@ void PeerConnectionManager::sendEncodedFrame(const QByteArray& encodedData, uint
         
 }
 
+//RTP包处理
+void PeerConnectionManager::processReceivedRtpPacket(const std::vector<std::byte>& rtpPacket)
+{ 
+    if (rtpPacket.size() < 12) {
+        qWarning() << "RTP package too small , ignoring";
+        return;
+    }
+    const uint8_t* data = reinterpret_cast<const uint8_t*>(rtpPacket.data());
+    //解析RTP 头部
+    uint8_t version = (data[0]>>6)&0x03;
+    bool marker = (data[1] & 0x80) != 0;
+    uint8_t payloadType = data[1] & 0x7F;
+    uint16_t sequenceNumber = (data[2] << 8) | data[3];
+    uint32_t timestamp = (data[4] << 24) | (data[5] << 16) | (data[6] << 8) | data[7];
+
+    if (version != 2 || payloadType != 96) {
+        qWarning() << "Invalid RTP package format";
+        return;
+    }
+
+    //RTP载荷开始位置
+    const uint8_t* payload = data + 12;
+    int payloadSize = rtpPacket.size() - 12;
+    if (payloadSize <= 0) {
+        qWarning() << "Empty RTP payload";
+        return;
+    }
+       
+    //检查是否是分片包（FU-A）
+    uint8_t nalHeader = payload[0];
+    uint8_t nalType = nalHeader & 0x1F;
+
+    qDebug() << "RTP packet: seq=" << sequenceNumber
+        << "timestamp=" << timestamp
+        << "marker=" << marker
+        << "payloadSize=" << payloadSize
+        << "firstByte=" << Qt::hex << nalHeader
+        << "nalType=" << nalType;
+
+    if (nalType == 28) {
+        if (payloadSize < 2) {
+            qWarning() << "FU-A packet too small";
+            return;
+        }
+        uint8_t fuIndicator = payload[0];
+        uint8_t fuHeader = payload[1];
+
+        bool startBit = (fuHeader & 0x80) != 0;
+        bool endBit = (fuHeader & 0x40) != 0;
+        uint8_t originalNalType = fuHeader & 0x1F;
+
+        //重构原始NAL头部
+        uint8_t reconstructedNalHeader = (fuIndicator & 0xE0)|originalNalType;
+        if (startBit) { 
+
+            if (!m_reassemblyBuffer.empty() && m_currentTimestamp != timestamp) {
+                qWarning() << "Starting new NALU with different timestamp, clearing old buffer"
+                    << "old_ts:" << m_currentTimestamp << "new_ts:" << timestamp;
+            }
+
+            //开始新的NALU重组
+            m_reassemblyBuffer.clear();
+            m_reassemblyBuffer.push_back(reconstructedNalHeader);
+            m_reassemblyBuffer.insert(m_reassemblyBuffer.end(),payload+2,payload+payloadSize);
+            m_currentTimestamp = timestamp;
+            qDebug() << "Started new NALU reassembly, buffer size:" << m_reassemblyBuffer.size();
+        }
+        else if (!m_reassemblyBuffer.empty()) {
+            // 检查时间戳一致性
+            if (m_currentTimestamp != timestamp) {
+                qWarning() << "FU-A timestamp mismatch, expected:" << m_currentTimestamp
+                    << "got:" << timestamp << ", dropping buffer";
+                m_reassemblyBuffer.clear();
+                return;
+            }
+
+            // 检查序列号连续性（可选，但有助于调试）
+            if (m_expectedSequenceNumber != sequenceNumber) {
+                qWarning() << "Sequence number gap detected, expected:" << m_expectedSequenceNumber
+                    << "got:" << sequenceNumber;
+                // 注意：不要清空buffer，因为UDP可能乱序到达
+            }
+            m_expectedSequenceNumber = sequenceNumber + 1;
+
+            m_reassemblyBuffer.insert(m_reassemblyBuffer.end(), payload + 2, payload + payloadSize);
+            qDebug() << "Appended to buffer, new size:" << m_reassemblyBuffer.size();
+
+        }
+        else {
+            qWarning() << "Received middle/end FU-A packet without start, dropping";
+            return;
+        }
+        if (endBit && !m_reassemblyBuffer.empty()) {
+            QByteArray completeNalu(reinterpret_cast<const char*>(m_reassemblyBuffer.data()),
+                                    m_reassemblyBuffer.size());
+            qDebug()<<"Reassemble complete NALU,size:"<<completeNalu.size()
+                <<"timestamp:"<<m_currentTimestamp << "type:" << (m_reassemblyBuffer[0] & 0x1F);
+            QMetaObject::invokeMethod(this, [this,completeNalu]() {
+                emit encodedFrameReceived(completeNalu);
+                });
+            m_reassemblyBuffer.clear();
+        }
+    }
+    else {
+        //单个完整的NALU包
+        QByteArray nalData(reinterpret_cast<const char*>(payload), payloadSize);
+        qDebug()<<"Received complete single NALU,size:"<<nalData.size()
+            <<"timestamp:"<<m_currentTimestamp<<nalType;
+        QMetaObject::invokeMethod(this, [this,nalData]() {
+            emit encodedFrameReceived(nalData);
+            });
+    }
+}
+
 void PeerConnectionManager::stop()
 {
+
     // 1. 关闭 DataChannel
     if (m_videoChannel) {
         // 如果 DataChannel 仍处于打开状态，尝试关闭它

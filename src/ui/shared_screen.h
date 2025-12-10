@@ -56,7 +56,8 @@
 #include "signaling-server/src/Common.hpp"
 #include "src/Capture/ScreenCaptureService.h"
 #include "src/encoder/VideoEncoder.h"
-
+#include "src/ImageRendering/VideoOpenGLWidget.h"
+#include "src/ImageRendering/StreamReceiver.h"
 using namespace std;
 QT_BEGIN_NAMESPACE
 namespace Ui
@@ -124,6 +125,9 @@ private slots:
 
     void updateList(const QJsonArray& list);
     void onJoined(const QString& id);
+    //接受RTC包的槽函数，用于解码和渲染数据
+    void onFrameReceived(const uchar* y, const uchar* u, const uchar* v, int yStride, int uStride, int vStride, int width, int height);
+    void onStreamReceiverStateChanges(const QString& state);
 
 private:
     // ===== 帮助函数 =====
@@ -201,4 +205,9 @@ private:
     QPointer<QWidget> homeWidget;
     QPointer<QPushButton> joinButton;
     bool joined{false};
+
+    //新增：渲染模块变量，用于指定一个渲染模块
+private:
+    VideoOpenGLWidget* m_glScreenWidget = nullptr;
+    StreamReceiver* streamReceiver;
 };

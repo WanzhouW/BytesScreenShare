@@ -27,6 +27,7 @@ signals:
     void p2pConnected();     // datachannel has established
     void p2pDisconnected();
     void encodedFrameReceived(QByteArray data);
+    void encodedFrameReceived_2(QByteArray data);
 
     void connected();
     void disconnected();
@@ -49,7 +50,7 @@ private:
     void setupDataChannel();
     void bindDataChannel(std::shared_ptr<rtc::DataChannel> dc);
     void sendRtpPacket(const std::vector<uint8_t>& payload, bool marker);
-    
+    void processReceivedRtpPacket(const std::vector < std::byte > & rtpPacket);//【新增】 RTP包重组处理函数
     
     
 private:
@@ -67,6 +68,11 @@ private:
     uint16_t m_sequenceNumber = 0;
     uint32_t m_ssrc = 323010; // 随便给个 ID
     uint32_t currentTimestamp_ = 0;
+
+    //【新增】RTP 包重组相关变量
+    std::vector<uint8_t> m_reassemblyBuffer;//NALU重组缓冲区
+    uint32_t m_currentTimestamp = 0;//当前时间戳
+    uint16_t m_expectedSequenceNumber = 0;//新增，用于序列号检查
 
     const size_t MAX_RTP_PAYLOAD_SIZE = 1100; // 留出空间给 IP/UDP/RTP 头，保守设为 1100
     const int payloadType_ = 96;
