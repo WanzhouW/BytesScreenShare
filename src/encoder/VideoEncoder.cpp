@@ -28,7 +28,8 @@ bool VideoEncoder::init(int width, int height, int fps, int bitrate) {
     m_codecCtx->height = height;
     m_codecCtx->time_base = { 1, fps };
     m_codecCtx->framerate = { fps, 1 };
-    m_codecCtx->gop_size = 10; // 关键帧间隔
+
+    m_codecCtx->gop_size = 0.5 * fps; // 关键帧间隔
     m_codecCtx->max_b_frames = 0; // 实时流建议 0 B帧，降低延迟
     m_codecCtx->pix_fmt = AV_PIX_FMT_YUV420P; // H.264 标准输入格式
 
@@ -37,7 +38,7 @@ bool VideoEncoder::init(int width, int height, int fps, int bitrate) {
     av_dict_set(&opts, "preset", "ultrafast", 0);
     av_dict_set(&opts, "tune", "zerolatency", 0);
 
-    m_codecCtx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
+    // m_codecCtx->flags |= AV_CODEC_FLAG_GLOBAL_HEADER;
 
     if (avcodec_open2(m_codecCtx, codec, &opts) < 0) {
         qDebug() << "Could not open codec";
@@ -80,7 +81,7 @@ void VideoEncoder::encode(const QVideoFrame& inputFrame) {
         m_lastSrcW = cloneFrame.width();
         m_lastSrcH = cloneFrame.height();
 
-        
+
         // 这里简化假设输入是 RGB32 (AV_PIX_FMT_BGRA 或 RGBA)
         m_swsCtx = sws_getContext(
             cloneFrame.width(), cloneFrame.height(), AV_PIX_FMT_BGRA, // 输入
@@ -94,6 +95,8 @@ void VideoEncoder::encode(const QVideoFrame& inputFrame) {
         cloneFrame.unmap();
         return;
     }
+
+    av_frame_make_writable(m_frameYUV);
 
     // 执行转换
     const uint8_t* srcData[4] = { cloneFrame.bits(0) };
@@ -163,10 +166,10 @@ void VideoEncoder::encode(const QVideoFrame& inputFrame) {
                     // 计算 PTS (Presentation Time Stamp) 对应的 90kHz 时间戳
                     // ffmpeg 的 pts 通常基于 time_base (我们设的是 1/30)
                     // RTP 需要 90000Hz。
-                    
+
                     uint32_t rtpTimestamp = 0;
                     if (m_pkt->pts != AV_NOPTS_VALUE) {
-                        // 简化计算：因为我们设置 time_base = {1, fps}
+                        // 设置 time_base = {1, fps}
                         // 所以 pts 就是帧数 0, 1, 2...
                         // 90kHz 下每帧间隔 = 90000 / fps
                         // 假设 fps=30 -> 3000
